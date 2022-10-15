@@ -20,7 +20,7 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/admin/logout/page');
 
     } // End Method 
 
@@ -30,6 +30,9 @@ class AdminController extends Controller
 
     } // End Method 
 
+    public function AdminLogoutPage(){
+         return view('admin.admin_logout');
+    }// End Method 
 
 
 

@@ -115,7 +115,7 @@
 
 
         <footer class="footer footer-alt">
-            2022 - <script>document.write(new Date().getFullYear())</script> &copy; EeayNews by <a href="" class="text-white-50">Easylearning</a> 
+               <script>document.write(new Date().getFullYear())</script> &copy; EeayNews by <a href="" class="text-white-50">Easylearning</a> 
         </footer>
 
         <!-- Vendor js -->

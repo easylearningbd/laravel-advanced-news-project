@@ -35,3 +35,5 @@ Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admi
 
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+
+Route::get('/admin/logout/page', [AdminController::class, 'AdminLogoutPage'])->name('admin.logout.page');
