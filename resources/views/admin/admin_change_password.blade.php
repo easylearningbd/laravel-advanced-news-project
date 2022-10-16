@@ -34,8 +34,18 @@
                     
 
                     <div class="tab-pane" id="settings">
-    <form method="post" action="{{ route('admin.profile.store') }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('admin.update.password') }}"  >
     	@csrf
+
+        @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+        @elseif(session('error'))
+  <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div> 
+        @endif
 
   <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i>Admin Change Password</h5>
         <div class="row">
