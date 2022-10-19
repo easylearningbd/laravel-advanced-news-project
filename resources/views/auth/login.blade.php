@@ -1,57 +1,75 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('frontend.home_dashboard')
+@section('home') 
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+<div class="container">
 
-        <form method="POST" action="{{ route('login') }}">
+<div class="row">
+<div class="col-lg-6 col-md-12">
+<div class="contact-wrpp">
+<h4 class="contactAddess-title text-center">
+Login </h4>
+<div role="form" class="wpcf7" id="wpcf7-f437-o1" lang="en-US" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+
+
+<form method="POST" action="{{ route('login') }}">
             @csrf
+            
+<div style="display: none;">
+ 
+</div>
 
-            <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
+<div class="main_section">
+<div class="row">
+ 
 
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
 
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+<div class="col-md-12 col-sm-12">
+<div class="contact-title ">
+Email *
+</div>
+<div class="contact-form">
+<span class="wpcf7-form-control-wrap sub_title">
+    <input type="email" name="email" id="email" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Email"></span>
+</div>
+</div>
 
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
 
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            </div>
+<div class="col-md-12 col-sm-12">
+<div class="contact-title ">
+Password *
+</div>
+<div class="contact-form">
+<span class="wpcf7-form-control-wrap sub_title">
+    <input type="password" id="password" name="password" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Password"></span>
+</div>
+</div>
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+ 
+</div>
+ 
+ 
+ 
+ 
+<div class="row">
+<div class="col-md-12">
+<div class="contact-btn">
+<input type="submit" value="Login Now" class="wpcf7-form-control has-spinner wpcf7-submit"><span class="wpcf7-spinner"></span>
+</div>
+</div>
+</div>
+</div>
+ </form>
 
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+@endsection
