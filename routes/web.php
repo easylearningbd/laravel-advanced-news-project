@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
-/*
+use App\Http\Controllers\Frontend\IndexController;
+
+/* 
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -15,9 +17,11 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 |
 */ 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [IndexController::class, 'Index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
