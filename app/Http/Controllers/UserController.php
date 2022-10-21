@@ -54,6 +54,14 @@ class UserController extends Controller
     } // End Method 
 
 
+    public function ChangePassword(){
+
+        $id = Auth::user()->id;
+        $userData = User::find($id);
+        return view('frontend.change_password',compact('userData'));
+
+    }// End Method 
+
 
 
 }

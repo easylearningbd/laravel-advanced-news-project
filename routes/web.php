@@ -37,6 +37,8 @@ Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])-
 
 Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
 
+Route::get('/change/password', [UserController::class, 'ChangePassword'])->name('change.password');
+
 }); // End User Middleware 
 
 require __DIR__.'/auth.php';
