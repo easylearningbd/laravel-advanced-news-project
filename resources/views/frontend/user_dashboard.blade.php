@@ -1,5 +1,6 @@
 @extends('frontend.home_dashboard')
 @section('home') 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <div class="container">
 
@@ -13,12 +14,12 @@
  
 
  <figure class="authorPage-image">
-<img alt="" src="assets/images/lazy.jpg" class="avatar avatar-96 photo" height="96" width="96" loading="lazy"> </figure>
+<img alt="" src="{{ (!empty($userData->photo)) ? url('upload/user_images/'.$userData->photo): url('upload/no_image.jpg') }}" class="avatar avatar-96 photo" height="96" width="96" loading="lazy"> </figure>
 <h1 class="authorPage-name">
-<a href=" "> Kazi Ariyan </a>
+<a href=" "> {{ $userData->name }} </a>
 </h1>
 <h6 class="authorPage-name">
-  kazi@gmail.com 
+ {{ $userData->email }}
 </h6>
   
  
@@ -27,6 +28,7 @@
  <li><a href=""><b>🟢 Your Profile </b></a> </li>
  <li> <a href=""> <b>🔵 Change Password </b> </a> </li> 
 <li> <a href=""> <b>🟠 Read Later List </b> </a> </li> 
+<li> <a href=""> <b>🟠 Logout </b> </a> </li> 
 </ul>
 
 </div>
@@ -46,7 +48,10 @@
 User Account </h4>
 <div role="form" class="wpcf7" id="wpcf7-f437-o1" lang="en-US" dir="ltr">
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-<form action=" " method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+
+<form action="{{ route('user.profile.store') }}" method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+@csrf
+
 <div style="display: none;">
  
 </div>
@@ -54,13 +59,33 @@ User Account </h4>
 <div class="main_section">
 <div class="row">
  
+  
+
+    	 @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+        @elseif(session('error'))
+  <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div> 
+        @endif
 
 <div class="col-md-12 col-sm-12">
 <div class="contact-title ">
 User Name *
 </div>
 <div class="contact-form">
-<span class="wpcf7-form-control-wrap sub_title"><input type="text" name="sub_title" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Email"></span>
+<span class="wpcf7-form-control-wrap sub_title"><input type="text" name="username" value="{{ $userData->username }}" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"  ></span>
+</div>
+</div>
+
+<div class="col-md-12 col-sm-12">
+<div class="contact-title ">
+  Name *
+</div>
+<div class="contact-form">
+<span class="wpcf7-form-control-wrap sub_title"><input type="text" name="name" value="{{ $userData->name }}" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"  ></span>
 </div>
 </div>
 
@@ -71,7 +96,7 @@ User Name *
 Email *
 </div>
 <div class="contact-form">
-<span class="wpcf7-form-control-wrap sub_title"><input type="text" name="sub_title" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Email"></span>
+<span class="wpcf7-form-control-wrap sub_title"><input type="email" name="email" value="{{ $userData->email }}" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"  ></span>
 </div>
 </div>
 
@@ -80,7 +105,7 @@ Email *
 Phone *
 </div>
 <div class="contact-form">
-<span class="wpcf7-form-control-wrap sub_title"><input type="text" name="sub_title" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Phone"></span>
+<span class="wpcf7-form-control-wrap sub_title"><input type="text" name="phone" value="{{ $userData->phone }}" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" ></span>
 </div>
 </div>
 
@@ -90,12 +115,22 @@ Phone *
 Photo *
 </div>
 <div class="contact-form">
-<span class="wpcf7-form-control-wrap sub_title"><input type="file" name="sub_title" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"  ></span>
+<span class="wpcf7-form-control-wrap sub_title"><input type="file" name="photo"   size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" id="image" ></span>
 </div>
 </div>
 
+<div class="col-md-12 col-sm-12">
+<div class="contact-title ">
+ 
+</div>
+<div class="contact-form">
+<span class="wpcf7-form-control-wrap sub_title"> 
+	<img id="showImage" src="{{ (!empty($userData->photo)) ? url('upload/user_images/'.$userData->photo): url('upload/no_image.jpg') }} " class="rounded-circle avatar-lg img-thumbnail" alt="profile-image" style="width:100px; height:100px;"></span>
+</div>
+</div>
 
  
+
 </div>
  
  
@@ -126,6 +161,16 @@ Photo *
 
 </div>
 
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#image').change(function(e){
+			var reader = new FileReader();
+			reader.onload = function(e){
+				$('#showImage').attr('src',e.target.result);
+			}
+			reader.readAsDataURL(e.target.files['0']);
+		});
+	});
+</script>
 
 @endsection
