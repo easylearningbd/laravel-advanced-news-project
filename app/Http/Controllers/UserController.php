@@ -41,7 +41,17 @@ class UserController extends Controller
 
     } // End Method 
 
+    public function UserLogout(Request $request){
 
+         Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login')->with("status", "User Logout Successfully");
+
+    } // End Method 
 
 
 

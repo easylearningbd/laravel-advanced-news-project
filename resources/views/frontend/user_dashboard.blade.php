@@ -28,7 +28,7 @@
  <li><a href=""><b>🟢 Your Profile </b></a> </li>
  <li> <a href=""> <b>🔵 Change Password </b> </a> </li> 
 <li> <a href=""> <b>🟠 Read Later List </b> </a> </li> 
-<li> <a href=""> <b>🟠 Logout </b> </a> </li> 
+<li> <a href="{{ route('user.logout') }}"> <b>🟠 Logout </b> </a> </li> 
 </ul>
 
 </div>
