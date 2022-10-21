@@ -49,7 +49,7 @@ Change Password  </h4>
 <div role="form" class="wpcf7" id="wpcf7-f437-o1" lang="en-US" dir="ltr">
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
 
-<form action="{{ route('user.profile.store') }}" method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+<form action="{{ route('user.change.password') }}" method="post" class="wpcf7-form init"  novalidate="novalidate" data-status="init">
 @csrf
 
 <div style="display: none;">
