@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
 use App\Http\Controllers\Frontend\IndexController;
@@ -23,9 +24,16 @@ use App\Http\Controllers\Frontend\IndexController;
 
 Route::get('/', [IndexController::class, 'Index']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::middleware(['auth'])->group(function() {
+
+Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('dashboard');
+
+}); // End User Middleware 
 
 require __DIR__.'/auth.php';
 
