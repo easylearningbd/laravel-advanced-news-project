@@ -17,7 +17,9 @@ class CategoryController extends Controller
 
 
 
-
+    public function AddCategory(){
+         return view('backend.category.category_add');
+    }// End Mehtod 
 
 
 

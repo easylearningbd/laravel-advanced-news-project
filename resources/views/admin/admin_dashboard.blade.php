@@ -98,8 +98,8 @@
         <script src="{{ asset('backend/assets/js/pages/dashboard-1.init.js') }}"></script>
 
         <!-- App js-->
-        <script src="{{ asset('backend/assets/js/app.min.js') }}"></script>
-
+     <script src="{{ asset('backend/assets/js/app.min.js') }}"></script>
+      <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
 
 
   <!-- third party js -->
