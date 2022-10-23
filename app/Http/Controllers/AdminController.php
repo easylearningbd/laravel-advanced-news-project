@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-
+ 
 class AdminController extends Controller
 { 
     public function AdminDashboard(){
@@ -106,6 +106,19 @@ class AdminController extends Controller
         return back()->with('status', "Password Change Successfully");
 
     } // End Method 
+
+
+    public function AllAdmin(){
+
+        $alladminuser = User::where('role','admin')->latest()->get();
+        return view('backend.admin.all_admin',compact('alladminuser'));
+    } // End Method 
+
+
+
+
+
+
 
 }
  
