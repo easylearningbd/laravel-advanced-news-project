@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <a href="{{ route('add.category') }}" class="btn btn-blue waves-effect waves-light">Add SubCategory</a>
+                    <a href="{{ route('add.subcategory') }}" class="btn btn-blue waves-effect waves-light">Add SubCategory</a>
                 </ol>
             </div>
                                     <h4 class="page-title">SubCategory All </h4>
@@ -42,7 +42,7 @@
             	@foreach($subcategories as $key=> $item)
                 <tr>
                     <td>{{ $key+1 }}</td>
-                     <td>{{ $item->category_id }}</td>
+                     <td>{{ $item['category']['category_name'] }}</td>
                     <td>{{ $item->subcategory_name }}</td>
                     <td>
       <a href="{{ route('edit.category',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>

@@ -55,7 +55,7 @@
                   <a href="{{ route('all.subcategory') }}">All SubCategory</a>
                     </li>
                     <li>
-                 <a href="{{ route('add.category') }}">Add SubCategory</a>
+                 <a href="{{ route('add.subcategory') }}">Add SubCategory</a>
                     </li>
                     
                 </ul>
