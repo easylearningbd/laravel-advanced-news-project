@@ -14,10 +14,10 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             
-                                            <li class="breadcrumb-item active">Add Category</li>
+                                            <li class="breadcrumb-item active">Edit Category</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Add Category</h4>
+                                    <h4 class="page-title">Edit Category</h4>
                                 </div>
                             </div>
                         </div>     
@@ -29,13 +29,15 @@
                                 <div class="card">
                                     <div class="card-body">
                                          
-    <form id="myForm" method="post" action="{{ route('category.store') }}">
+    <form id="myForm" method="post" action="{{ route('category.update') }}">
     	@csrf 
+
+        <input type="hidden" name="id" value="{{ $category->id }}">
     	
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label for="inputEmail4" class="form-label">Category Name </label>
-                <input type="text" name="category_name" class="form-control" id="inputEmail4" placeholder="Add Category">
+                <input type="text" name="category_name" class="form-control" id="inputEmail4" value="{{ $category->category_name }}"  >
             </div>
              
         </div>

@@ -81,6 +81,9 @@ Route::controller(CategoryController::class)->group(function(){
 
     Route::get('/all/category','AllCategory')->name('all.category');
     Route::get('/add/category','AddCategory')->name('add.category');
+    Route::post('/store/category','StoreCategory')->name('category.store');
+    Route::get('/edit/category/{id}','EditCategory')->name('edit.category');
+    Route::post('/update/category','UpdateCategory')->name('category.update');
 
 });
 
