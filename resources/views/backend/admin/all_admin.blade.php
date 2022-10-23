@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <a href="{{ route('add.category') }}" class="btn btn-blue waves-effect waves-light">Add Admin</a>
+                    <a href="{{ route('add.admin') }}" class="btn btn-blue waves-effect waves-light">Add Admin</a>
                 </ol>
             </div>
                                     <h4 class="page-title">Admin All </h4>

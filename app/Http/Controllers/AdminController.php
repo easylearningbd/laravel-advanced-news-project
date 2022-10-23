@@ -115,9 +115,30 @@ class AdminController extends Controller
     } // End Method 
 
 
+    public function AddAdmin(){
+        return view('backend.admin.add_admin');
+    } // End Method 
 
+    public function StoreAdmin(Request $request){
 
+        $user = new User();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = Hash::make($request->password);
+        $user->role = 'admin';
+        $user->status = 'inactive';
+        $user->save();
 
+         $notification = array(
+            'message' => 'New Admin User Created Successfully',
+            'alert-type' => 'success'
+
+        );
+        return redirect()->route('all.admin')->with($notification);
+
+    } // End Method 
 
 
 }
