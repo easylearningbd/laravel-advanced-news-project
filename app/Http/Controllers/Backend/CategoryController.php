@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Subcategory;
 
 class CategoryController extends Controller
 {
@@ -85,6 +86,16 @@ class CategoryController extends Controller
         return redirect()->back()->with($notification);
 
     }// End Mehtod 
+
+    ////////////// Sub Category All ///////////////
+
+
+     public function AllSubCategory(){
+
+        $subcategories = Subcategory::latest()->get();
+        return view('backend.subcategory.subcategory_all',compact('subcategories'));
+
+    } // End Mehtod 
 
 
 }
