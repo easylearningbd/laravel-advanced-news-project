@@ -15,7 +15,7 @@
                     <a href="{{ route('add.admin') }}" class="btn btn-blue waves-effect waves-light">Add Admin</a>
                 </ol>
             </div>
-                                    <h4 class="page-title">Admin All </h4>
+                                    <h4 class="page-title">Admin All <span class="btn btn-danger"> {{ count($alladminuser) }} </span> </h4>
                                 </div>
                             </div>
                         </div>     
@@ -60,9 +60,9 @@
 
                     </td> 
                     <td>
-      <a href="{{ route('edit.category',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>
+      <a href="{{ route('edit.admin',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>
 
-      <a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+      <a href="{{ route('delete.admin',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
 
                     </td> 
                 </tr>

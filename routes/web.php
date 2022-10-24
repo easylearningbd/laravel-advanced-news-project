@@ -108,9 +108,9 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/all/admin','AllAdmin')->name('all.admin');
     Route::get('/add/admin','AddAdmin')->name('add.admin');
     Route::post('/store/admin','StoreAdmin')->name('admin.store');
-    Route::get('/edit/category/{id}','EditCategory')->name('edit.category');
-    Route::post('/update/category','UpdateCategory')->name('category.update');
-    Route::get('/delete/category/{id}','DeleteCategory')->name('delete.category');
+    Route::get('/edit/admin/{id}','EditAdmin')->name('edit.admin');
+    Route::post('/update/admin','UpdateAdmin')->name('admin.update');
+    Route::get('/delete/admin/{id}','DeleteAdmin')->name('delete.admin');
 
 });
 

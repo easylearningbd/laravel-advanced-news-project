@@ -141,5 +141,54 @@ class AdminController extends Controller
     } // End Method 
 
 
+    public function EditAdmin($id){
+
+        $adminuser = User::findOrFail($id);
+        return view('backend.admin.edit_admin',compact('adminuser'));
+
+    } // End Method 
+
+
+
+public function UpdateAdmin(Request $request){
+
+        $admin_id = $request->id;
+
+        $user = User::findOrFail($admin_id);
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone; 
+        $user->role = 'admin';
+        $user->status = 'inactive';
+        $user->save();
+
+         $notification = array(
+            'message' => 'Admin User Updated Successfully',
+            'alert-type' => 'success'
+
+        );
+        return redirect()->route('all.admin')->with($notification);
+
+    } // End Method 
+
+
+    public function DeleteAdmin($id){
+
+        User::findOrFail($id)->delete();
+
+         $notification = array(
+            'message' => 'Admin User Deleted Successfully',
+            'alert-type' => 'success'
+
+        );
+
+        return redirect()->back()->with($notification);
+
+    }// End Mehtod 
+
+
+
+
 }
  
