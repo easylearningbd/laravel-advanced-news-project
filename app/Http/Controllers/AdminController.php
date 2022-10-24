@@ -188,6 +188,35 @@ public function UpdateAdmin(Request $request){
     }// End Mehtod 
 
 
+    public function InactiveAdminUser($id){
+
+        User::findOrFail($id)->update(['status' => 'inactive']);
+
+        $notification = array(
+            'message' => 'Admin User Inactive',
+            'alert-type' => 'success'
+
+        );
+
+        return redirect()->back()->with($notification);
+
+    }// End Mehtod 
+
+
+     public function ActiveAdminUser($id){
+
+        User::findOrFail($id)->update(['status' => 'active']);
+
+        $notification = array(
+            'message' => 'Admin User Active',
+            'alert-type' => 'success'
+
+        );
+
+        return redirect()->back()->with($notification);
+
+    }// End Mehtod 
+
 
 
 }
