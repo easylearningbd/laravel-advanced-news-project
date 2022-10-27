@@ -7,7 +7,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\CategoryController;
-
+ 
 /* 
 |--------------------------------------------------------------------------
 | Web Routes
