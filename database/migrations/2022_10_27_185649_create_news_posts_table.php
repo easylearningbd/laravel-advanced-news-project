@@ -23,12 +23,12 @@ return new class extends Migration
             $table->string('image');
             $table->text('news_details');
             $table->text('tags');
-            $table->integer('breaking_news');
-            $table->integer('top_slider');
-            $table->integer('first_section_three');
-            $table->integer('first_section_nine');
-            $table->string('post_date');
-            $table->string('post_month');
+            $table->integer('breaking_news')->nullable();
+            $table->integer('top_slider')->nullable();
+            $table->integer('first_section_three')->nullable();
+            $table->integer('first_section_nine')->nullable();
+            $table->string('post_date')->nullable();
+            $table->string('post_month')->nullable();
             $table->integer('status')->default(1); 
             $table->timestamps();
         });

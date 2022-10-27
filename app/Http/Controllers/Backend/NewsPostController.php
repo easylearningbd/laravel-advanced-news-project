@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Subcategory;
+use App\Models\User;
 use App\Models\NewsPost;
 
 class NewsPostController extends Controller
@@ -17,7 +18,13 @@ class NewsPostController extends Controller
     } // End Method
 
 
-
+    public function AddNewsPost(){
+         
+         $categories = Category::latest()->get();
+         $subcategories = Subcategory::latest()->get();
+         $adminuser = User::where('role','admin')->latest()->get();
+        return view('backend.news.add_news_post',compact('categories','subcategories','adminuser'));
+    }// End Method
 
 
 
