@@ -7,6 +7,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\NewsPostController;
  
 /* 
 |--------------------------------------------------------------------------
@@ -118,6 +119,19 @@ Route::controller(AdminController::class)->group(function(){
 
 });
 
+
+
+// News Post all Route
+Route::controller(NewsPostController::class)->group(function(){
+
+    Route::get('/all/news/post','AllNewsPost')->name('all.news.post');
+    Route::get('/add/category','AddCategory')->name('add.category');
+    Route::post('/store/category','StoreCategory')->name('category.store');
+    Route::get('/edit/category/{id}','EditCategory')->name('edit.category');
+    Route::post('/update/category','UpdateCategory')->name('category.update');
+    Route::get('/delete/category/{id}','DeleteCategory')->name('delete.category');
+
+});
 
 
 
