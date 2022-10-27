@@ -79,6 +79,60 @@
                 <label for="example-fileinput" class="form-label"> </label>
         <img id="showImage" src="{{ url('upload/no_image.jpg') }} " class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
             </div>
+
+
+
+ <div class="col-12 mb-3">
+     <label for="inputEmail4" class="form-label">News Details  </label>
+            <textarea name="news_details"></textarea>    
+            </div>
+
+
+ <div class="form-group col-md-6 mb-3">
+                <label for="inputEmail4" class="form-label">Tags  </label>
+                <input type="text" class="selectize-close-btn" value="awesome">
+            </div>
+
+
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-check mb-2 form-check-primary">
+                <input class="form-check-input" type="checkbox" name="breaking_news" value="1" id="customckeck1"  >
+                <label class="form-check-label" for="customckeck1">Breaking News</label>
+            </div>
+
+            <div class="form-check mb-2 form-check-primary">
+                <input class="form-check-input" type="checkbox" name="  top_slider" value="1" id="customckeck1"  >
+                <label class="form-check-label" for="customckeck2">Top Slider</label>
+            </div>
+            
+        </div>
+
+
+
+
+             <div class="col-lg-6">
+           <div class="form-check mb-2 form-check-danger">
+            <input class="form-check-input" name="first_section_three" type="checkbox" value="1" id="customckeck3"  >
+            <label class="form-check-label" for="customckeck3">First Section Three</label>
+        </div>
+
+            <div class="form-check mb-2 form-check-danger">
+            <input class="form-check-input"  name="first_section_nine" type="checkbox" value="1" id="customckeck3" >
+            <label class="form-check-label" for="customckeck4">First Section Nice</label>
+        </div>
+            
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
              
         </div>
  
