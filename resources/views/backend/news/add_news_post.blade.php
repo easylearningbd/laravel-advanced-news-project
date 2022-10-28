@@ -29,7 +29,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                          
-    <form id="myForm" method="post" action="{{ route('admin.store') }}">
+    <form id="myForm" method="post" action="{{ route('store.news.post') }}" enctype="multipart/form-data">
     	@csrf 
     	
         <div class="row">
@@ -88,7 +88,7 @@
 
  <div class="form-group col-md-6 mb-3">
                 <label for="inputEmail4" class="form-label">Tags  </label>
-                <input type="text" class="selectize-close-btn" value="awesome">
+                <input type="text" name="tags" class="selectize-close-btn" value="awesome">
             </div>
 
 
@@ -101,7 +101,7 @@
             </div>
 
             <div class="form-check mb-2 form-check-primary">
-                <input class="form-check-input" type="checkbox" name="top_slider" value="1" id="customckeck1"  >
+                <input class="form-check-input" type="checkbox" name="top_slider" value="1" id="customckeck2"  >
                 <label class="form-check-label" for="customckeck2">Top Slider</label>
             </div>
             
@@ -117,7 +117,7 @@
         </div>
 
             <div class="form-check mb-2 form-check-danger">
-            <input class="form-check-input"  name="first_section_nine" type="checkbox" value="1" id="customckeck3" >
+            <input class="form-check-input"  name="first_section_nine" type="checkbox" value="1" id="customckeck4" >
             <label class="form-check-label" for="customckeck4">First Section Nine</label>
         </div>
             
@@ -152,38 +152,14 @@
     $(document).ready(function (){
         $('#myForm').validate({
             rules: {
-                username: {
-                    required : true,
-                }, 
-                name: {
-                    required : true,
-                }, 
-                email: {
-                    required : true,
-                }, 
-                phone: {
-                    required : true,
-                }, 
-                password: {
+                news_title: {
                     required : true,
                 }, 
             },
             messages :{
-                username: {
-                    required : 'Please Enter User Name',
-                },
-                name: {
-                    required : 'Please Enter Your Name',
-                },
-                email: {
-                    required : 'Please Enter Your Email',
-                },
-                phone: {
-                    required : 'Please Enter Your Phone',
-                },
-                password: {
-                    required : 'Please Enter Your Password',
-                },
+                news_title: {
+                    required : 'Please Enter News Title',
+                }, 
             },
             errorElement : 'span', 
             errorPlacement: function (error,element) {

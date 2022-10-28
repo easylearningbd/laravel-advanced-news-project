@@ -130,6 +130,8 @@ Route::controller(NewsPostController::class)->group(function(){
 
     Route::get('/all/news/post','AllNewsPost')->name('all.news.post');
     Route::get('/add/news/post','AddNewsPost')->name('add.news.post');
+
+    Route::post('/store/news/post','StoreNewsPost')->name('store.news.post');
      
 
 });
