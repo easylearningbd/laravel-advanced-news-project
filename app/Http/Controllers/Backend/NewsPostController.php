@@ -155,6 +155,24 @@ class NewsPostController extends Controller
         } 
 
     }// End Method
+
+
+    public function DeleteNewsPost($id){
+
+        $post_image = NewsPost::findOrFail($id);
+        $img = $post_image->image;
+        unlink($img);
+
+        NewsPost::findOrFail($id)->delete();
+
+         $notification = array(
+            'message' => 'News Post Deleted Successfully',
+            'alert-type' => 'success'
+
+        );
+        return redirect()->back()->with($notification);
+
+    }// End Method
  
 
 } 
