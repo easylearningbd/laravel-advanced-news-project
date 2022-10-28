@@ -133,6 +133,7 @@ Route::controller(NewsPostController::class)->group(function(){
 
     Route::post('/store/news/post','StoreNewsPost')->name('store.news.post');
     Route::get('/edit/news/post/{id}','EditNewsPost')->name('edit.news.post');
+    Route::post('/update/news/post','UpdateNewsPost')->name('update.news.post');
 
 });
 
