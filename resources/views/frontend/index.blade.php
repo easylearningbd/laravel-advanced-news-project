@@ -84,7 +84,7 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 <a href=" "><img class="lazyload" src="{{ asset($nine->image) }}"  ></a>
 </div>
 <h4 class="secOne-title2">
-<a href=" ">{{ $nine->news_title }} </a>
+<a href="{{ url('news/details/'.$nine->id.'/'.$nine->news_title_slug) }}">{{ $nine->news_title }} </a>
 </h4>
 </div>
 <div class="cat-meta">

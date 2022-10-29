@@ -144,3 +144,8 @@ Route::controller(NewsPostController::class)->group(function(){
 
 
  }); // End Admin Middleware 
+
+
+/// Access for All 
+Route::get('/news/details/{id}/{slug}', [IndexController::class, 'NewsDetails']) ;
+
