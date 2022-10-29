@@ -215,142 +215,44 @@ Comments *
 
 <div class="archiveTab-sibearNews">
 
-
+@foreach($newnewspost as $key=> $newsitem)
 <div class="archive-tabWrpp archiveTab-border">
 <div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
+<a href="{{ url('news/details/'.$newsitem->id.'/'.$newsitem->news_title_slug) }}"><img class="lazyload" src="{{ asset($newsitem->image) }}"  ></a> </div>
 <a href=" " class="archiveTab-icon2"><i class="la la-play"></i></a>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
+<h4 class="archiveTab_hadding"><a href="{{ url('news/details/'.$newsitem->id.'/'.$newsitem->news_title_slug) }}">{{ $newsitem->news_title }} </a>
 </h4>
 <div class="archive-conut">
-1
+{{$key+1}}
 </div>
 
 </div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
-</h4>
-<div class="archive-conut">
-2
-</div>
-</div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping</a>
-</h4>
-<div class="archive-conut">
-3
-</div>
-</div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a> </div>
- <h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
-</h4>
-<div class="archive-conut">
-4
-</div>
-</div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping   </a>
-</h4>
-<div class="archive-conut">
-5
-</div>
-</div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a> </div>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
-</h4>
-<div class="archive-conut">
-6
-</div>
-</div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping</a>
-</h4>
-<div class="archive-conut">
-7
-</div>
-</div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a> </div>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
-</h4>
-<div class="archive-conut">
-8
-</div>
-</div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
+ @endforeach
 
-</h4>
-<div class="archive-conut">
-9
-</div>
-</div>
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a> </div>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
-</h4>
-<div class="archive-conut">
-10
-</div>
-</div>
+ 
 </div>
 </div>
 <div class="tab-pane fade" id="archiveTab_popular" role="tabpanel" aria-labelledby="archivePopulars">
 <div class="archiveTab-sibearNews">
 
 
+@foreach($newspopular as $key=> $newsitem)
 <div class="archive-tabWrpp archiveTab-border">
 <div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
+<a href="{{ url('news/details/'.$newsitem->id.'/'.$newsitem->news_title_slug) }}"><img class="lazyload" src="{{ asset($newsitem->image) }}"  ></a> </div>
 <a href=" " class="archiveTab-icon2"><i class="la la-play"></i></a>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
+<h4 class="archiveTab_hadding"><a href="{{ url('news/details/'.$newsitem->id.'/'.$newsitem->news_title_slug) }}">{{ $newsitem->news_title }} </a>
 </h4>
 <div class="archive-conut">
-1
+{{$key+1}}
 </div>
 
 </div>
+ @endforeach
 
+ 
 
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
-<a href=" " class="archiveTab-icon2"><i class="la la-play"></i></a>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
-</h4>
-<div class="archive-conut">
-1
-</div>
-
-</div>
-
-<div class="archive-tabWrpp archiveTab-border">
-<div class="archiveTab-image ">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> </div>
-<a href=" " class="archiveTab-icon2"><i class="la la-play"></i></a>
-<h4 class="archiveTab_hadding"><a href=" ">Why people are industry hopping </a>
-</h4>
-<div class="archive-conut">
-1
-</div>
-
-</div>
+ 
 </div>
 </div>
 </div>

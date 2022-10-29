@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Session;
 class IndexController extends Controller
 {
     public function Index(){
-        return view('frontend.index');
+
+        $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
+        $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
+
+        return view('frontend.index',compact('newnewspost','newspopular'));
     } // End Method 
 
 
@@ -32,8 +36,10 @@ class IndexController extends Controller
            Session::put($newsKey,1);
         }
 
+        $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
+        $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 
-        return view('frontend.news.news_details',compact('news','tags_all','relatedNews'));
+        return view('frontend.news.news_details',compact('news','tags_all','relatedNews','newnewspost','newspopular'));
 
     }// End Method 
 

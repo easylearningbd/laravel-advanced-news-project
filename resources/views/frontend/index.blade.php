@@ -27,14 +27,14 @@ $news_slider = App\Models\NewsPost::where('status',1)->where('top_slider',1)->li
 @foreach($news_slider as $slider )
     <div class="owl-item " style="width: 506.25px; margin-right: 20px;"><div class="secOne_newsContent">
 <div class="sec-one-image">
-<a href=" "><img class="lazyload" src="{{ asset($slider->image) }}"></a>
+<a href="{{ url('news/details/'.$slider->id.'/'.$slider->news_title_slug) }}"><img class="lazyload" src="{{ asset($slider->image) }}"></a>
 <h6 class="sec-small-cat">
 <a href=" ">
 {{ $slider->created_at->format('M d Y') }}
 </a>
 </h6>
 <h1 class="sec-one-title">
-<a href=" ">{{ $slider->news_title  }}</a>
+<a href="{{ url('news/details/'.$slider->id.'/'.$slider->news_title_slug) }}">{{ $slider->news_title  }}</a>
 </h1>
 </div>
 </div></div>
@@ -56,9 +56,9 @@ $section_three = App\Models\NewsPost::where('status',1)->where('first_section_th
  @foreach($section_three as $three)
 <div class="secOne-smallItem">
 <div class="secOne-smallImg">
-<a href=" "><img class="lazyload" src="{{ asset($three->image) }}"  ></a>
+<a href="{{ url('news/details/'.$three->id.'/'.$three->news_title_slug) }}"><img class="lazyload" src="{{ asset($three->image) }}"  ></a>
 <h5 class="secOne_smallTitle">
-<a href=" ">{{ $three->news_title }} </a>
+<a href="{{ url('news/details/'.$three->id.'/'.$three->news_title_slug) }}">{{ $three->news_title }} </a>
 </h5>
 </div>
 </div>
@@ -144,128 +144,31 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 <div class="tab-content" id="pills-tabContent">
 <div class="tab-pane active show  fade" id="recent" role="tabpanel" aria-labelledby="recent">
 <div class="news-titletab">
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
 
+@foreach($newnewspost as $item)
 <div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
+<a href=" " class="tab-icon"><i class="la la-play"></i></a>
+<h4 class="tab_hadding"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }} </a></h4>
 </div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">5th Convocation of IIUC on Sunday </a></h4>
-</div>
+@endforeach
+ 
+
+
 </div>
 </div>
 <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="popular">
 <div class="news-titletab">
 
+@foreach($newspopular as $item)
 <div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
+<h4 class="tab_hadding"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }} </a></h4>
 </div>
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
-
-<div class="tab-image tab-border">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href=" ">Nasa’s Artemis Moon rocket second launch  </a></h4>
-</div>
+@endforeach
+ 
+ 
 
 
 
