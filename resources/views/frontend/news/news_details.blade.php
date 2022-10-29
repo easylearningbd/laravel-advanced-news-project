@@ -13,26 +13,32 @@
 <i class="la la-home"> </i><a href=" "> HOME </a>
 </div>
 <div class="single-cats">
-<i class="la la-bars"></i> <a href=" " rel="category tag">NATIONAL</a>, <a href=" " rel="category tag">SUBCATEGORY</a> </div>
+<i class="la la-bars"></i> <a href=" " rel="category tag">{{ $news['category']['category_name'] }}</a>, 
+
+@if($news->subcategory_id == NULL)
+<a href=" " rel="category tag"> </a>
+@else
+<a href=" " rel="category tag">{{ $news['subcategory']['subcategory_name'] }}</a>
+@endif
+ </div>
 </div>
-<h5 class="single-page-subTitle">
-Coaching centers to stay closed during SSC exams </h5>
+ 
 <h1 class="single-page-title">
-Coaching centers to stay closed during SSC exams </h1>
+{{ $news->news_title }} </h1>
 <div class="row g-2">
 <div class="col-lg-1 col-md-2 ">
 <div class="reportar-image">
-<img src="assets/images/lazy.jpg">
+<img src="{{ (!empty($news->user->photo)) ? url('upload/admin_images/'.$news->user->photo): url('upload/no_image.jpg') }}">
 </div>
 </div>
 <div class="col-lg-11 col-md-10">
 <div class="reportar-title">
-KAZI ARIYAN
+Posted By {{ $news['user']['name'] }}
 </div>
 <div class="viwe-count">
 <ul>
 <li><i class="la la-clock-o"></i> Updated
- Saturday, 10th September 2022
+{{ $news->created_at->format('l M d Y') }}
 </li>
 <li> / <i class="la la-eye"></i>
 75
@@ -44,9 +50,9 @@ Read
 </div>
 
 <div class="single-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
+<a href=" "><img class="lazyload" src="{{ asset($news->image) }}"  ></a>
 <h2 class="single-caption2">
-Caption Caption Caption Caption Caption
+{{ $news->news_title }}
 </h2>
 </div>
  
@@ -55,27 +61,7 @@ Caption Caption Caption Caption Caption
 </div>
 </div> </div>
 <div class="single-details">
-<p>Prime Minister Sheikh Hasina on Monday joined the funeral of Queen Elizabeth II along with other world leaders at Westminster Abbey in London.
-<br><br>
-Hundreds of dignitaries are there including the Queen's former prime ministers as well as US President Joe Biden and French President Emmanuel Macron, reports BSS.
-<br><br>
-Sheikh Rehana, younger sister of Prime Minister Sheikh Hasina, also joined the funeral.
-<br><br>
-Queen's funeral service is taking place at Westminster Abbey - the building in which she was married and crowned.
-<br><br>
-Her coffin, draped in flags and topped by the Imperial State Crown, was drawn to the church on a gun carriage by Royal Navy sailors.
-<br><br>
-On September 15, Sheikh Hasina arrived in London on an official visit to the United Kingdom (UK) to attend the funeral of Queen Elizabeth II.
-<br><br>
-A sombre mood on the streets around Buckingham Palace where people are gathering to watch a procession after the service.
-<br><br>
-It will take the Queen's coffin on a final journey through London and on to Windsor Castle for a second service.
-<br><br>
-Earlier, on Sunday morning, Prime Minister Sheikh Hasina along with her younger sister Sheikh Rehana went to the Palace of Westminster to pay their last respect to the late Queen where the body of Elizabeth II was kept in the Lying-in-State.
-<br><br>
-She paid respect to the Queen at her lying-in-state in Westminster Hall and sign a book of condolence at Lancaster House.
-
-Sheikh Rehana also signed condolence book.</p>
+<p> {!! $news->news_details !!} </p>
 </div>
 <div class="singlePage2-tag">
 <span> Tags : </span>

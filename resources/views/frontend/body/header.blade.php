@@ -41,7 +41,7 @@ $cdate = new DateTime();
 <div class="row">
 <div class="col-lg-4 col-md-4">
 <div class="logo">
-<a href=" " title="NewsFlash">
+<a href="{{ url('/') }}" title="NewsFlash">
 <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="NewsFlash" title="NewsFlash">
 </a>
 </div>
@@ -69,7 +69,7 @@ $cdate = new DateTime();
 <img src="assets/images/footer_logo.gif" alt="Logo" title="Logo">
 </a>
 </div>
-<div class="stellarnav dark desktop"><a href="https://newssitedesign.com/newsflash/#" class="menu-toggle full"><span class="bars"><span></span><span></span><span></span></span> </a><ul id="menu-main-menu" class="menu"><li id="menu-item-89" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-89"><a href="https://newssitedesign.com/newsflash" aria-current="page"> <i class="fa-solid fa-house-user"></i>  HOME</a></li>
+<div class="stellarnav dark desktop"><a href=" " class="menu-toggle full"><span class="bars"><span></span><span></span><span></span></span> </a><ul id="menu-main-menu" class="menu"><li id="menu-item-89" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-89"><a href="{{ url('/') }} " aria-current="page"> <i class="fa-solid fa-house-user"></i>  HOME</a></li>
  
  @php
  $categories = App\Models\Category::orderBy('category_name','ASC')->limit(7)->get();
