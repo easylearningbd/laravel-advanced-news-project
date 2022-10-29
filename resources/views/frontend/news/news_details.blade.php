@@ -1,6 +1,6 @@
 @extends('frontend.home_dashboard')
 @section('home') 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <div class="container">
 <div class="row">
 <div class="col-lg-8 col-md-8">
@@ -60,9 +60,17 @@ Read
 <div class="themesBazar_widget"> <div class="textwidget"><p><img loading="lazy" class="aligncenter size-full wp-image-74" src="assets/images/biggapon-1.gif" alt="" width="100%" height="auto"></p>
 </div>
 </div> </div>
+
+<button id="inc">A+</button>
+<button id="dec">A-</button>
+
+<news-font>
 <div class="single-details">
 <p> {!! $news->news_details !!} </p>
 </div>
+</news-font>
+
+
 <div class="singlePage2-tag">
 <span> Tags : </span>
 
@@ -354,6 +362,30 @@ Comments *
 </div>
 
 
+<script type="text/javascript">
+	var size = 16;
+
+	function setFontSize(s){
+		size = s;
+		$('news-font').css('font-size','' + size + 'px');
+	}
+
+	function increaseFontSize(){
+		setFontSize(size + 5);
+	}
+
+	function decreaseFontSize(){
+		if (size > 5)  
+			setFontSize(size - 5);
+		}
+
+	$('#inc').click(increaseFontSize);
+    $('#dec').click(decreaseFontSize);
+	setFontSize(size);
+	 
+ 
+
+</script>
 
 
 
