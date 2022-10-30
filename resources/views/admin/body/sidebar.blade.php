@@ -95,32 +95,22 @@
             </div>
         </li>
 
-                            <li>
-                                <a href="#sidebarCrm" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-account-multiple-outline"></i>
-                                    <span> CRM </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarCrm">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="crm-dashboard.html">Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="crm-contacts.html">Contacts</a>
-                                        </li>
-                                        <li>
-                                            <a href="crm-opportunities.html">Opportunities</a>
-                                        </li>
-                                        <li>
-                                            <a href="crm-leads.html">Leads</a>
-                                        </li>
-                                        <li>
-                                            <a href="crm-customers.html">Customers</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                                  <li>
+            <a href="#banner" data-bs-toggle="collapse">
+                <i class="mdi mdi-cart-outline"></i>
+                <span> Banner Setting </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="banner">
+                <ul class="nav-second-level">
+                    <li>
+                  <a href="{{ route('all.banners') }}">All Banner</a>
+                    </li>
+                  
+                    
+                </ul>
+            </div>
+        </li>
 
                             <li>
                                 <a href="#sidebarEmail" data-bs-toggle="collapse">
