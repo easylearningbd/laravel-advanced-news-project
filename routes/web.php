@@ -149,6 +149,7 @@ Route::controller(NewsPostController::class)->group(function(){
 /// Access for All 
 Route::get('/news/details/{id}/{slug}', [IndexController::class, 'NewsDetails']);
 Route::get('/news/category/{id}/{slug}', [IndexController::class, 'CatWiseNews']);
+Route::get('/news/subcategory/{id}/{slug}', [IndexController::class, 'SubCatWiseNews']);
 
 
 /// End Access for All 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\NewsPost;
 use App\Models\Category;
+use App\Models\Subcategory;
 use Carbon\Carbon; 
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Session;
@@ -59,6 +60,22 @@ class IndexController extends Controller
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 
         return view('frontend.news.category_news',compact('news','breadcat','newstwo','newnewspost','newspopular'));
+
+    }// End Method
+
+
+     public function SubCatWiseNews($id,$slug){
+
+        $news = NewsPost::where('status',1)->where('subcategory_id',$id)->orderBy('id','DESC')->get();
+
+        $breadsubcat = Subcategory::where('id',$id)->first();
+
+        $newstwo = NewsPost::where('status',1)->where('subcategory_id',$id)->orderBy('id','DESC')->limit(2)->get();
+
+        $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
+        $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
+
+        return view('frontend.news.subcategory_news',compact('news','breadsubcat','newstwo','newnewspost','newspopular'));
 
     }// End Method
 
