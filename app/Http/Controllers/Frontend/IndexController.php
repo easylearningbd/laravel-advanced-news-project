@@ -46,7 +46,14 @@ class IndexController extends Controller
 
 
 
+    public function CatWiseNews($id,$slug){
 
+        $news = NewsPost::where('status',1)->where('category_id',$id)->orderBy('id','DESC')->get();
+
+
+        return view('frontend.news.category_news',compact('news'));
+
+    }// End Method
 
 
 
