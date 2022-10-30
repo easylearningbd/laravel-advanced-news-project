@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\NewsPost;
+use App\Models\Category;
 use Carbon\Carbon; 
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Session;
@@ -50,8 +51,14 @@ class IndexController extends Controller
 
         $news = NewsPost::where('status',1)->where('category_id',$id)->orderBy('id','DESC')->get();
 
+        $breadcat = Category::where('id',$id)->first();
 
-        return view('frontend.news.category_news',compact('news'));
+        $newstwo = NewsPost::where('status',1)->where('category_id',$id)->orderBy('id','DESC')->limit(2)->get();
+
+       $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
+        $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
+
+        return view('frontend.news.category_news',compact('news','breadcat','newstwo','newnewspost','newspopular'));
 
     }// End Method
 
