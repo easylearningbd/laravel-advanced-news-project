@@ -29,10 +29,10 @@
                                 <div class="card">
                                     <div class="card-body">
                                          
-    <form id="myForm" method="post" action="{{ route('category.update') }}">
+    <form id="myForm" method="post" action="{{ route('update.banners') }}" enctype="multipart/form-data">
     	@csrf 
 
-        <input type="hidden" name="id" value=" ">
+        <input type="hidden" name="id" value="{{ $banner->id }}">
     	
         <div class="row">
 
@@ -44,7 +44,7 @@
 
              <div class="form-group col-md-6 mb-3">
                 <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage" src="{{ (!empty($banner->home_one)) ? url('upload/banner/'.$banner->home_one): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
+        <img id="showImage" src="{{ (!empty($banner->home_one)) ? url($banner->home_one): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
             </div>
 
 
@@ -56,7 +56,7 @@
 
              <div class="form-group col-md-6 mb-3">
                 <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage2" src="{{ (!empty($banner->home_two)) ? url('upload/banner/'.$banner->home_two): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
+        <img id="showImage2" src="{{ (!empty($banner->home_two)) ? url( $banner->home_two): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
             </div>
 
 
@@ -68,7 +68,7 @@
 
              <div class="form-group col-md-6 mb-3">
                 <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage3" src="{{ (!empty($banner->home_three)) ? url('upload/banner/'.$banner->home_three): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
+        <img id="showImage3" src="{{ (!empty($banner->home_three)) ? url( $banner->home_three): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
             </div>
 
 
@@ -81,7 +81,7 @@
 
              <div class="form-group col-md-6 mb-3">
                 <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage4" src="{{ (!empty($banner->home_four)) ? url('upload/banner/'.$banner->home_four): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
+        <img id="showImage4" src="{{ (!empty($banner->home_four)) ? url( $banner->home_four): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
             </div>
 
 
@@ -92,7 +92,7 @@
 
              <div class="form-group col-md-6 mb-3">
                 <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage5" src="{{ (!empty($banner->news_category_one)) ? url('upload/banner/'.$banner->news_category_one): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
+        <img id="showImage5" src="{{ (!empty($banner->news_category_one)) ? url( $banner->news_category_one): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
             </div>
 
 
@@ -103,7 +103,7 @@
 
              <div class="form-group col-md-6 mb-3">
                 <label for="example-fileinput" class="form-label"> </label>
-        <img id="showImage6" src="{{ (!empty($banner->news_details_one)) ? url('upload/banner/'.$banner->news_details_one): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
+        <img id="showImage6" src="{{ (!empty($banner->news_details_one)) ? url( $banner->news_details_one): url('upload/no_image.jpg') }} " class=" " alt="profile-image" style="width:400px; height:60px;">
             </div>
 
              
