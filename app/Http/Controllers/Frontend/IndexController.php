@@ -10,6 +10,7 @@ use App\Models\Subcategory;
 use Carbon\Carbon; 
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Session;
+use App;
 
 class IndexController extends Controller
 {
@@ -79,6 +80,15 @@ class IndexController extends Controller
 
     }// End Method
 
+
+    public function Change(Request $request){
+
+        App::setLocale($request->lang);
+        session()->put('locale',$request->lang);
+
+        return redirect()->back();
+
+    }// End Method
 
 
 

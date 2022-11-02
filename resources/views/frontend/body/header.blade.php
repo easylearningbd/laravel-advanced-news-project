@@ -1,6 +1,8 @@
 @php
 $cdate = new DateTime();
 @endphp
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <header class="themesbazar_header">
 <div class="container">
 <div class="row">
@@ -22,7 +24,7 @@ $cdate = new DateTime();
                 <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }} >English</option>
 
                 <option value="bn" {{ session()->get('locale') == 'bn' ? 'selected' : '' }}>Bangla</option>
-                
+
                 <option value="hi" {{ session()->get('locale') == 'hi' ? 'selected' : '' }}>Hindi</option>
                 
             </select>
@@ -107,7 +109,8 @@ $cdate = new DateTime();
  @endphp
 
 @foreach($categories as $category)
-<li id="menu-item-291" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-291 has-sub"><a href="{{ url('news/category/'.$category->id.'/'.$category->category_slug) }}">{{ $category->category_name }}</a>
+<li id="menu-item-291" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-291 has-sub"><a href="{{ url('news/category/'.$category->id.'/'.$category->category_slug) }}">
+    {{  GoogleTranslate::trans($category->category_name, app()->getLocale() )  }}</a>
 
  @php
  $subcategories = App\Models\Subcategory::where('category_id',$category->id)->orderBy('subcategory_name','ASC')->get(); 
@@ -115,7 +118,10 @@ $cdate = new DateTime();
 
 <ul class="sub-menu">
 @foreach($subcategories as $subcategory)
-<li id="menu-item-294" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-294"><a href="{{ url('news/subcategory/'.$subcategory->id.'/'.$subcategory->subcategory_slug) }}">{{ $subcategory->subcategory_name }}</a></li> 
+<li id="menu-item-294" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-294"><a href="{{ url('news/subcategory/'.$subcategory->id.'/'.$subcategory->subcategory_slug) }}">
+{{  GoogleTranslate::trans($subcategory->subcategory_name, app()->getLocale() )  }} 
+
+</a></li> 
 @endforeach
 </ul>
 
@@ -133,3 +139,13 @@ $cdate = new DateTime();
 </div>
 </div>
 </div>
+
+
+<script type="text/javascript">
+    
+    var url = "{{ route('changeLang') }}";
+    $(".changeLang").change(function(){
+        window.location.href = url + "?lang="+$(this).val();
+    });
+
+</script>
