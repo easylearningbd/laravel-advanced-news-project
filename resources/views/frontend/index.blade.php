@@ -34,7 +34,9 @@ $news_slider = App\Models\NewsPost::where('status',1)->where('top_slider',1)->li
 </a>
 </h6>
 <h1 class="sec-one-title">
-<a href="{{ url('news/details/'.$slider->id.'/'.$slider->news_title_slug) }}">{{ $slider->news_title  }}</a>
+<a href="{{ url('news/details/'.$slider->id.'/'.$slider->news_title_slug) }}"> 
+{{  GoogleTranslate::trans($slider->news_title, app()->getLocale() )  }}
+</a>
 </h1>
 </div>
 </div></div>
@@ -58,7 +60,8 @@ $section_three = App\Models\NewsPost::where('status',1)->where('first_section_th
 <div class="secOne-smallImg">
 <a href="{{ url('news/details/'.$three->id.'/'.$three->news_title_slug) }}"><img class="lazyload" src="{{ asset($three->image) }}"  ></a>
 <h5 class="secOne_smallTitle">
-<a href="{{ url('news/details/'.$three->id.'/'.$three->news_title_slug) }}">{{ $three->news_title }} </a>
+<a href="{{ url('news/details/'.$three->id.'/'.$three->news_title_slug) }}"> 
+{{  GoogleTranslate::trans($three->news_title, app()->getLocale() )  }} </a>
 </h5>
 </div>
 </div>
@@ -84,7 +87,8 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 <a href=" "><img class="lazyload" src="{{ asset($nine->image) }}"  ></a>
 </div>
 <h4 class="secOne-title2">
-<a href="{{ url('news/details/'.$nine->id.'/'.$nine->news_title_slug) }}">{{ $nine->news_title }} </a>
+<a href="{{ url('news/details/'.$nine->id.'/'.$nine->news_title_slug) }}"> 
+{{  GoogleTranslate::trans($nine->news_title, app()->getLocale() )  }} </a>
 </h4>
 </div>
 <div class="cat-meta">
@@ -149,7 +153,8 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 <div class="tab-image tab-border">
 <a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }} </a></h4>
+<h4 class="tab_hadding"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{  GoogleTranslate::trans($item->news_title, app()->getLocale() )  }}
+     </a></h4>
 </div>
 @endforeach
  
@@ -164,7 +169,7 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 <div class="tab-image tab-border">
 <a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <a href=" " class="tab-icon"><i class="la la-play"></i></a>
-<h4 class="tab_hadding"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }} </a></h4>
+<h4 class="tab_hadding"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{  GoogleTranslate::trans($item->news_title, app()->getLocale() )  }} </a></h4>
 </div>
 @endforeach
  

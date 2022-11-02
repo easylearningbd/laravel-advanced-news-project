@@ -19,7 +19,7 @@ $breaking_news = App\Models\NewsPost::where('status',1)->where('breaking_news',1
 @foreach($breaking_news as $item)
 <a href=" ">
 <img src="{{ asset('frontend/assets/images/favicon.gif') }}" alt="Logo" title="Logo" width="30px" height="auto">
-{{ $item->news_title }} </a>
+{{  GoogleTranslate::trans($item->news_title, app()->getLocale() )  }} </a>
 @endforeach
 
 </marquee>

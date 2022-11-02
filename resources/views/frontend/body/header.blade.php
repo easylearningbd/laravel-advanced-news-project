@@ -27,6 +27,8 @@ $cdate = new DateTime();
 
                 <option value="hi" {{ session()->get('locale') == 'hi' ? 'selected' : '' }}>Hindi</option>
                 
+                <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>French</option>
+                
             </select>
             
         </div> 
