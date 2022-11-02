@@ -4,13 +4,43 @@ $cdate = new DateTime();
 <header class="themesbazar_header">
 <div class="container">
 <div class="row">
-<div class="col-lg-4 col-md-4">
-<div class="date">
+<div class="col-lg-5 col-md-5">
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="date">
 <i class="lar la-calendar"></i>
  {{ $cdate->format('l d-m-Y')  }}
 </div>
+            
+        </div>  
+
+           <div class="col-md-6">
+
+            <select class="form-select changeLang">
+                <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }} >English</option>
+
+                <option value="bn" {{ session()->get('locale') == 'bn' ? 'selected' : '' }}>Bangla</option>
+                
+                <option value="hi" {{ session()->get('locale') == 'hi' ? 'selected' : '' }}>Hindi</option>
+                
+            </select>
+            
+        </div> 
+
+    </div>
+
+
+
+
 </div>
-<div class="col-lg-4 col-md-4">
+
+
+
+
+
+<div class="col-lg-3 col-md-3">
 <form class="header-search" action=" " method="post">
 <input type="text" alue="" name="s" placeholder=" Search Here " required="">
 <button type="submit" value="Search"> <i class="las la-search"></i> </button>
