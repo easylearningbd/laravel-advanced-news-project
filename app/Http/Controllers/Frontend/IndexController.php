@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Session;
 use App;
+use DateTime;
 
 class IndexController extends Controller
 {
@@ -90,6 +91,15 @@ class IndexController extends Controller
 
     }// End Method
 
+    public function SearchByDate(Request $request){
+
+        $date = new DateTime($request->date);
+        $formatDate = $date->format('d-m-Y');
+
+        $news = NewsPost::where('post_date',$formatDate)->latest()->get();
+        return view('frontend.news.search_by_date',compact('news','formatDate'));
+
+    }// End Method
 
 
 }

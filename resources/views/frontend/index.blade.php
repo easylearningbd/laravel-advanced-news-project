@@ -131,10 +131,17 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 <div class="themesBazar_widget">
 <h3 style="margin-top:5px"> OLD NEWS </h3>
 </div>
-<form class="wordpress-date" action=" " method="post">
-<input type="date" id="wordpress" placeholder="Select Date" autocomplete="off" value="" name="m" required="" class="hasDatepicker">
+
+
+<form class="wordpress-date" action="{{ route('search-by-date') }}" method="post">
+    @csrf 
+    
+<input type="date" id="wordpress" placeholder="Select Date" autocomplete="off"  name="date" class="hasDatepicker">
 <input type="submit" value="Search">
 </form>
+
+
+
 <div class="recentPopular">
 <ul class="nav nav-pills" id="recentPopular-tab" role="tablist">
 <li class="nav-item" role="presentation">

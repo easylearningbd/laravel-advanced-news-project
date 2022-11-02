@@ -165,6 +165,8 @@ Route::get('/news/subcategory/{id}/{slug}', [IndexController::class, 'SubCatWise
 
 Route::get('/lang/change', [IndexController::class, 'Change'])->name('changeLang');
 
+Route::post('/search', [IndexController::class, 'SearchByDate'])->name('search-by-date');
+
 
 /// End Access for All 
 
