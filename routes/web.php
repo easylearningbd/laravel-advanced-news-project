@@ -160,6 +160,7 @@ Route::controller(BannerController::class)->group(function(){
 Route::controller(PhotoGalleryController::class)->group(function(){
 
     Route::get('/all/photo/gallery','AllPhotoGallery')->name('all.photo.gallery');
+    Route::get('/add/photo/gallery','AddPhotoGallery')->name('add.photo.gallery');
      
    
 

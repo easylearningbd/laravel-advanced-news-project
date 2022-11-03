@@ -18,5 +18,10 @@ class PhotoGalleryController extends Controller
     } // End Method 
 
 
+    public function AddPhotoGallery(){
+        return view('backend.photo.add_photo');
+    }// End Method 
+
+
 }
  
