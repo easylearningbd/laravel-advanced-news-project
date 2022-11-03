@@ -128,6 +128,23 @@
                 </div>
             </li>
 
+
+             <li>
+                <a href="#video" data-bs-toggle="collapse">
+                    <i class="mdi mdi-email-multiple-outline"></i>
+                    <span> Video Setting </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="video">
+                    <ul class="nav-second-level">
+                        <li>
+                            <a href="{{ route('all.video.gallery') }}">Video Gallery</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+
                               
                             
  
