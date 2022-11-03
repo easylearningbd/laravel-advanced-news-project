@@ -47,9 +47,9 @@
                     <td>{{ $item->video_title }}</td>
                     <td>{{ $item->post_date }}</td>
                     <td>
-      <a href="{{ route('edit.photo.gallery',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>
+      <a href="{{ route('edit.video.gallery',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>
 
-      <a href="{{ route('delete.photo.gallery',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
+      <a href="{{ route('delete.video.gallery',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
 
                     </td> 
                 </tr>
