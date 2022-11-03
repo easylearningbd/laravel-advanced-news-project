@@ -166,6 +166,8 @@ Route::controller(PhotoGalleryController::class)->group(function(){
     Route::get('/edit/photo/gallery/{id}','EditPhotoGallery')->name('edit.photo.gallery');
 
     Route::post('/update/photo/gallery','UpdatePhotoGallery')->name('update.photo.gallery');
+
+    Route::get('/delete/photo/gallery/{id}','DeletePhotoGallery')->name('delete.photo.gallery');
      
    
 
