@@ -45,7 +45,7 @@
                     <td><img src="{{ asset($item->photo_gallery ) }}"  style="width:50px; height:50px;"> </td>
                     <td>{{ $item->post_date }}</td>
                     <td>
-      <a href="{{ route('edit.category',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>
+      <a href="{{ route('edit.photo.gallery',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>
 
       <a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
 
