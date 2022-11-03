@@ -29,7 +29,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                          
-    <form id="myForm" method="post" action="{{ route('category.store') }}">
+    <form id="myForm" method="post" action="{{ route('store.photo.gallery') }}" enctype="multipart/form-data">
     	@csrf 
     	
         <div class="row">
