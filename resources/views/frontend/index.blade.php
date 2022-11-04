@@ -106,6 +106,11 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 </div>
 </div>
 </div>
+
+@php
+$live = App\Models\LiveTv::find(1);
+@endphp
+
 <div class="col-lg-3 col-md-4">
 <div class="live-item">
 <div class="live_title">
@@ -114,14 +119,14 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 </div>
 <div class="popup-wrpp">
 <div class="live_image">
-<img width="700" height="400" src="assets/images/lazy.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy">
+<img width="700" height="400" src="{{ asset($live->live_image) }}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy">
 <div data-mfp-src="#mymodal" class="live-icon modal-live"> <i class="las la-play"></i> </div>
 </div>
 <div class="live-popup"> 
 <div id="mymodal" class="mfp-hide" role="dialog" aria-labelledby="modal-titles" aria-describedby="modal-contents">
 <div id="modal-contents">
 <div class="embed-responsive embed-responsive-16by9 embed-responsive-item">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="{{ $live->live_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>
