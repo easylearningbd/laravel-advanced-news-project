@@ -29,7 +29,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                          
-    <form id="myForm" method="post" action="{{ route('update.video.gallery') }}" enctype="multipart/form-data">
+    <form id="myForm" method="post" action="{{ route('update.live') }}" enctype="multipart/form-data">
     	@csrf 
     	
         <input type="hidden" name="id" value="{{ $live->id }}">

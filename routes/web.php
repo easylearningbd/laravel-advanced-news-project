@@ -192,6 +192,7 @@ Route::controller(VideoGalleryController::class)->group(function(){
      Route::get('/delete/video/gallery/{id}','DeleteVideoGallery')->name('delete.video.gallery');
 
      Route::get('/update/live/tv','UpdateLiveTv')->name('update.live.tv');
+     Route::post('/update/live','UpdateLiveData')->name('update.live');
 
 });
 

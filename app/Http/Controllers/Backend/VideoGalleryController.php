@@ -130,11 +130,58 @@ class VideoGalleryController extends Controller
 
 
 /////////////////// Live TV Method ////////////////
-    
+
     public function UpdateLiveTv(){
         $live = LiveTv::findOrFail(1);
         return view('backend.video.live_tv',compact('live'));
     }// End Method 
+
+
+     public function UpdateLiveData(Request $request){
+
+        $live_id = $request->id;
+
+        if ($request->file('live_image')) {
+
+        $image = $request->file('live_image');
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(784,436)->save('upload/live/'.$name_gen);
+        $save_url = 'upload/live/'.$name_gen;
+
+        LiveTv::findOrFail($live_id)->update([
+
+            'live_url' => $request->live_url,   
+            'post_date' => Carbon::now()->format('d F Y'),
+            'live_image' => $save_url, 
+
+        ]);
+
+         $notification = array(
+            'message' => 'Live Tv Update With Image Successfully',
+            'alert-type' => 'success'
+
+        );
+        return redirect()->back()->with($notification);
+
+        } else{
+
+            LiveTv::findOrFail($live_id)->update([
+
+            'live_url' => $request->live_url,   
+            'post_date' => Carbon::now()->format('d F Y'), 
+
+        ]);
+
+         $notification = array(
+            'message' => 'Live Tv Update Without Image Successfully',
+            'alert-type' => 'success'
+
+        );
+        return redirect()->back()->with($notification);
+
+        }
+
+    }// End Method
 
 
 }
