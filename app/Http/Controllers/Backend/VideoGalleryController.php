@@ -8,6 +8,8 @@ use App\Models\VideoGallery;
 use Carbon\Carbon; 
 use Intervention\Image\Facades\Image;
 
+use App\Models\LiveTv;
+
 class VideoGalleryController extends Controller
 {
     public function AllVideoGallery(){
@@ -124,6 +126,14 @@ class VideoGalleryController extends Controller
         return redirect()->back()->with($notification); 
 
 
+    }// End Method 
+
+
+/////////////////// Live TV Method ////////////////
+    
+    public function UpdateLiveTv(){
+        $live = LiveTv::findOrFail(1);
+        return view('backend.video.live_tv',compact('live'));
     }// End Method 
 
 

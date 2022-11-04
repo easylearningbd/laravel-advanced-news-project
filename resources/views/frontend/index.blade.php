@@ -121,7 +121,7 @@ $section_nine = App\Models\NewsPost::where('status',1)->where('first_section_nin
 <div id="mymodal" class="mfp-hide" role="dialog" aria-labelledby="modal-titles" aria-describedby="modal-contents">
 <div id="modal-contents">
 <div class="embed-responsive embed-responsive-16by9 embed-responsive-item">
-<iframe class="" src=" "  allowfullscreen="allowfullscreen" width="100%" height="400px"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>
