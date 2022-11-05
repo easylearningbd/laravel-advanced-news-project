@@ -124,6 +124,17 @@ Share News </h3>
 <form action="{{ route('store.review') }}" method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
 @csrf
 
+ @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+        @elseif(session('error'))
+  <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div> 
+        @endif
+
+
 <input type="hidden" name="news_id" value="{{ $news->id }}">
 
 <div style="display: none;">
