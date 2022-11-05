@@ -177,7 +177,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('update.live.tv') }}">Approve Review</a>
+                    <a href="{{ route('approve.review') }}">Approve Review</a>
                 </li>
                 
             </ul>

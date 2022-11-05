@@ -55,5 +55,31 @@ class ReviewController extends Controller
 
     }// End Method
 
+
+
+     public function ApproveReview(){
+
+        $review = Review::where('status',1)->orderBy('id','DESC')->get();
+        return view('backend.review.approve_review',compact('review'));
+
+    }// End Method
+
+
+
+    public function DeleteReview($id){
+
+        Review::findOrFail($id)->delete();
+
+         $notification = array(
+            'message' => 'Review Deleted Successfully',
+            'alert-type' => 'success'
+
+        );
+
+        return redirect()->back()->with($notification);
+
+
+    }// End Method
+
 }
  
