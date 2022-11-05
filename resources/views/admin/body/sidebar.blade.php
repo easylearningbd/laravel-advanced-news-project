@@ -162,6 +162,28 @@
                 </div>
             </li>
 
+
+
+     <li>
+        <a href="#review" data-bs-toggle="collapse">
+            <i class="mdi mdi-email-multiple-outline"></i>
+            <span> Review Setting </span>
+            <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="review">
+            <ul class="nav-second-level">
+                <li>
+                    <a href="{{ route('pending.review') }}">Pending Review</a>
+                </li>
+
+                <li>
+                    <a href="{{ route('update.live.tv') }}">Approve Review</a>
+                </li>
+                
+            </ul>
+        </div>
+    </li>
+
                               
                             
  
