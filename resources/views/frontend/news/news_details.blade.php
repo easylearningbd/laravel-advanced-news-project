@@ -93,25 +93,40 @@ Share News </h3>
 					}
 					</script> </a>
 </div>
- 
+
+
+@php
+$review = App\Models\Review::where('news_id',$news->id)->latest()->limit(5)->get();
+@endphp
+
+
+ @foreach($review as $item)
+
+ @if($item->status == 0)
+
+ @else
+
+
  <div class="author2">
 <div class="author-content2">
 <h6 class="author-caption2">
 <span> COMMENTS </span>
 </h6>
 <div class="author-image2">
-<img alt="" src="assets/images/lazy.jpg
-"   class="avatar avatar-96 photo" height="96" width="96" loading="lazy"> </div>
+<img alt="" src="{{ (!empty($item->user->photo)) ? url('upload/user_images/'.$item->user->photo): url('upload/no_image.jpg') }} "   class="avatar avatar-96 photo" height="96" width="96" loading="lazy"> </div>
 <div class="authorContent">
 <h1 class="author-name2">
-<a href=" "> Jack MA </a>
+<a href=" "> {{ $item->user->name }} </a>
 </h1>
-<div class="author-details">It will take the Queen's coffin on a final journey through London and on to Windsor Castle for a second service</div>
+<p> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }} </p>
+<div class="author-details">{{ $item->comment }}</div>
 </div>
  
 </div>
 </div>
-
+ @endif
+ 
+@endforeach
 
  <hr>
 
