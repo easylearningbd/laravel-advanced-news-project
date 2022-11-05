@@ -29,7 +29,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                          
-    <form id="myForm" method="post" action="{{ route('admin.update') }}">
+    <form id="myForm" method="post" action="{{ route('update.seo.setting') }}">
     	@csrf 
 
         <input type="hidden" name="id" value="{{ $seo->id }}">

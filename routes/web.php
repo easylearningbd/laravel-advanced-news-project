@@ -216,7 +216,7 @@ Route::controller(ReviewController::class)->group(function(){
 Route::controller(SeoSettingController::class)->group(function(){
 
     Route::get('/seo/setting','SeoSiteSetting')->name('seo.setting');
-    
+    Route::post('/update/seo/setting','UpdateSeoSetting')->name('update.seo.setting');
  
 });
 
