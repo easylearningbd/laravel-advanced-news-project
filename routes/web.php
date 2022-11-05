@@ -6,12 +6,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\ReviewController;
+
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\NewsPostController;
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\PhotoGalleryController;
 use App\Http\Controllers\Backend\VideoGalleryController;
- 
+  
 /*  
 |--------------------------------------------------------------------------
 | Web Routes
@@ -208,6 +210,8 @@ Route::get('/news/subcategory/{id}/{slug}', [IndexController::class, 'SubCatWise
 Route::get('/lang/change', [IndexController::class, 'Change'])->name('changeLang');
 
 Route::post('/search', [IndexController::class, 'SearchByDate'])->name('search-by-date');
+
+Route::post('/store/review', [ReviewController::class, 'StoreReview'])->name('store.review');
 
 
 /// End Access for All 

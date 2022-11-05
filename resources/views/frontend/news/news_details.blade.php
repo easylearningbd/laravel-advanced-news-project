@@ -121,7 +121,11 @@ Share News </h3>
 
  @else  
 
-<form action=" " method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+<form action="{{ route('store.review') }}" method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
+@csrf
+
+<input type="hidden" name="news_id" value="{{ $news->id }}">
+
 <div style="display: none;">
  
 </div>
@@ -134,7 +138,9 @@ Share News </h3>
 Comments *
 </div>
 <div class="contact-form">
-<span class="wpcf7-form-control-wrap news_details"><textarea name="news_details" cols="20" rows="5" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="News Details...."></textarea></span>
+<span class="wpcf7-form-control-wrap news_details">
+
+	<textarea name="comment" cols="20" rows="5" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="News Details...."></textarea></span>
 </div>
 </div>
 </div>
