@@ -115,21 +115,18 @@ Share News </h3>
 
  <hr>
 
+ @guest
+
+ <p><b> For Add Product Review. You Need To Login First <a href="{{ route('login') }}"> Login Page</a> </b> </p>
+
+ @else  
+
 <form action=" " method="post" class="wpcf7-form init" enctype="multipart/form-data" novalidate="novalidate" data-status="init">
 <div style="display: none;">
  
 </div>
 <div class="main_section">
-<div class="row">
-<div class="col-md-12 col-sm-12">
-<div class="contact-title ">
-Subject *
-</div>
-<div class="contact-form">
-<span class="wpcf7-form-control-wrap sub_title"><input type="text" name="sub_title" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="News Sub Title"></span>
-</div>
-</div>
-</div>
+ 
  
 <div class="row">
 <div class="col-lg-12">
@@ -155,6 +152,9 @@ Comments *
 </div>
 
 <div class="wpcf7-response-output" aria-hidden="true"></div></form>
+
+
+ @endguest
  
 
  
