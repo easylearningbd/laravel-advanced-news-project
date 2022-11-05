@@ -147,12 +147,12 @@
 
 
              <li>
-                <a href="#video" data-bs-toggle="collapse">
+                <a href="#live" data-bs-toggle="collapse">
                     <i class="mdi mdi-email-multiple-outline"></i>
                     <span> Live Tv Setting </span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="video">
+                <div class="collapse" id="live">
                     <ul class="nav-second-level">
                         <li>
                             <a href="{{ route('update.live.tv') }}">Update Live TV</a>
@@ -184,6 +184,24 @@
         </div>
     </li>
 
+
+      <li>
+        <a href="#review" data-bs-toggle="collapse">
+            <i class="mdi mdi-email-multiple-outline"></i>
+            <span> Seo Setting </span>
+            <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="review">
+            <ul class="nav-second-level">
+                <li>
+                    <a href="{{ route('seo.setting') }}">Update Seo </a>
+                </li>
+
+                
+                
+            </ul>
+        </div>
+    </li>
                               
                             
  
