@@ -33,7 +33,7 @@
 </div>
 <div class="archive1-padding">
 <div class="archive1-title"><a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a></div>
-<div class="content-details"> {!! Str::limit($item->news_details, 100) !!} <a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"> Read More </a>
+<div class="content-details">   <a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}"> Read More </a>
 </div>
 </div>
 </div>
@@ -190,8 +190,6 @@
 </div>
 </div>
 </div>
-
-
 
 
 
