@@ -235,6 +235,8 @@ Route::post('/search', [IndexController::class, 'SearchByDate'])->name('search-b
 
 Route::post('/news', [IndexController::class, 'NewsSearch'])->name('news.search');
 
+Route::get('/reporter/{id}', [IndexController::class, 'ReporterNews'])->name('reporter.all.news');
+
 Route::post('/store/review', [ReviewController::class, 'StoreReview'])->name('store.review');
 
 

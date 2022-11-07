@@ -39,7 +39,7 @@
 </div>
 <div class="col-lg-11 col-md-10">
 <div class="reportar-title">
-Posted By {{ $news['user']['name'] }}
+Posted By <a href="{{ route('reporter.all.news',$news->user_id) }}">{{ $news['user']['name'] }} </a> 
 </div>
 <div class="viwe-count">
 <ul>
