@@ -2,7 +2,7 @@
 @section('home') 
 
 @section('title') 
-Seach By Date  
+Seach Page 
 @endsection
 
 
@@ -16,7 +16,7 @@ Seach By Date
  <div class="row">
 <div class="col-lg-8 col-md-8">
 <div class="rachive-info-cats">
-<a href=" "><i class="las la-home"></i> </a> <i class="las la-chevron-right"></i> Search By Date {{ $formatDate }}
+<a href=" "><i class="las la-home"></i> </a> <i class="las la-chevron-right"></i> Search By {{ $item }}
 </div>
  
 <div class="row">
