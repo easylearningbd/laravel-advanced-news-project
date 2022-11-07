@@ -1,6 +1,10 @@
 @extends('frontend.home_dashboard')
 @section('home') 
 
+@section('title') 
+Easy Online News 
+@endsection
+
 <div class="container">
 <div class="row">
  <div class="col-lg-12 col-md-12">

@@ -1,5 +1,11 @@
 @extends('frontend.home_dashboard')
 @section('home') 
+
+@section('title') 
+{{ $news->news_title }} | Easy Online News 
+@endsection
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <div class="container">
 <div class="row">
