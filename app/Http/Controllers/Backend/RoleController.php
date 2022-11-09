@@ -226,5 +226,21 @@ public function StoreRoles(Request $request){
     }// End Method
 
 
+    public function AdminDeleteRoles($id){
+        $role = Role::findOrFail($id);
+        if (!is_null($role)) {
+           $role->delete();
+        }
+
+         $notification = array(
+            'message' => 'Role Permission Deleted Successfully',
+            'alert-type' => 'success'
+
+        );
+        return redirect()->back()->with($notification); 
+
+    }// End Method
+
+
 }
  

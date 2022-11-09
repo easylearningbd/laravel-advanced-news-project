@@ -253,6 +253,9 @@ Route::controller(RoleController::class)->group(function(){
 
      Route::get('/admin/edit/roles/{id}','AdminEditRoles')->name('admin.edit.roles');
 
+Route::get('/admin/delete/roles/{id}','AdminDeleteRoles')->name('admin.delete.roles');
+
+
      Route::post('/role/permission/update/{id}','RolePermissionUpdate')->name('role.permission.update');
  
 });
