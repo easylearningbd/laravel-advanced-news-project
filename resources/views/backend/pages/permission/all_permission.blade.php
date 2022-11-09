@@ -12,7 +12,7 @@
                                 <div class="page-title-box">
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <a href="{{ route('add.category') }}" class="btn btn-blue waves-effect waves-light">Add Permission</a>
+                    <a href="{{ route('add.permission') }}" class="btn btn-blue waves-effect waves-light">Add Permission</a>
                 </ol>
             </div>
                                     <h4 class="page-title">Permission All </h4>
