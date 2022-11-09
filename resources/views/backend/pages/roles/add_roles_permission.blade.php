@@ -2,6 +2,12 @@
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+<style type="text/css">
+    .form-check-label {
+        text-transform: capitalize;
+    }
+</style>
+
 <div class="content">
 
                     <!-- Start Content-->
@@ -49,8 +55,8 @@
 
 
         <div class="form-check mb-2 form-check-primary">
-            <input class="form-check-input" type="checkbox" value="" id="customckeck1" checked="">
-            <label class="form-check-label" for="customckeck1">Primary</label>
+            <input class="form-check-input" type="checkbox" value="" id="customckeck15" >
+            <label class="form-check-label" for="customckeck15">Permission All</label>
         </div>
 
       <hr> 
@@ -60,7 +66,7 @@
           <div class="col-3">
 
           <div class="form-check mb-2 form-check-primary">
-            <input class="form-check-input" type="checkbox" value="" id="customckeck1" checked="">
+            <input class="form-check-input" type="checkbox" value="" id="customckeck1" >
             <label class="form-check-label" for="customckeck1">{{ $group->group_name }}</label>
         </div>
 
@@ -69,13 +75,19 @@
 
 
            <div class="col-9">
+ 
+ @php
+$permissions = App\Models\User::getpermissionByGroupName($group->group_name);
+ @endphp
 
+
+            @foreach($permissions as $permission)
            <div class="form-check mb-2 form-check-primary">
-            <input class="form-check-input" type="checkbox" value="" id="customckeck1" checked="">
-            <label class="form-check-label" for="customckeck1">Primary</label>
+            <input class="form-check-input" type="checkbox" value="" id="customckeck1"  >
+            <label class="form-check-label" for="customckeck1">{{ $permission->name }}</label>
         </div>
-
-
+        @endforeach
+        <br>
               
           </div><!--  // End col 9  -->
              
@@ -104,6 +116,18 @@
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
+
+     <script type="text/javascript">
+         $('#customckeck15').click(function(){
+            if ($(this).is(':checked')) {
+                $('input[type = checkbox]').prop('checked',true);
+            }else{
+                 $('input[type = checkbox]').prop('checked',false);
+            }
+         });
+
+     </script>           
 
  
 
