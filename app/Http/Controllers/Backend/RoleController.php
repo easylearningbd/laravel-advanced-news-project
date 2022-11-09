@@ -196,6 +196,16 @@ public function StoreRoles(Request $request){
     }// End Method
 
 
+    public function AdminEditRoles($id){
+
+        $role = Role::findOrFail($id);
+        $permissions = Permission::all();
+        $permission_groups = User::getpermissionGroups();
+        return view('backend.pages.roles.role_permission_edit',compact('role','permissions','permission_groups'));
+
+    }// End Method
+
+
 
 }
  
