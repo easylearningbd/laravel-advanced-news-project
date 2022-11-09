@@ -35,14 +35,14 @@
                                 <div class="card">
                                     <div class="card-body">
                                          
-    <form id="myForm" method="post" action="{{ route('permission.store') }}">
+    <form id="myForm" method="post" action="{{ route('role.permission.store') }}">
     	@csrf 
 
 
   <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label for="inputEmail4" class="form-label">All Roles </label>
-                <select name="group_name" class="form-select" id="example-select">
+                <select name="role_id" class="form-select" id="example-select">
                     <option> Select One Roles </option>
                    @foreach($roles as $role)
                     <option value="{{ $role->id }}">{{ $role->name }} </option> 
@@ -83,7 +83,7 @@ $permissions = App\Models\User::getpermissionByGroupName($group->group_name);
 
             @foreach($permissions as $permission)
            <div class="form-check mb-2 form-check-primary">
-            <input class="form-check-input" type="checkbox" value="" id="customckeck1"  >
+      <input class="form-check-input" name="permission[]" type="checkbox" value="{{ $permission->id }}" id="customckeck{{ $permission->id }}"  >
             <label class="form-check-label" for="customckeck1">{{ $permission->name }}</label>
         </div>
         @endforeach
