@@ -182,10 +182,19 @@ public function StoreRoles(Request $request){
             'alert-type' => 'success'
 
         );
-        return redirect()->route('all.roles')->with($notification);  
+        return redirect()->route('all.roles.permission')->with($notification);  
 
 
     }// End Method
+
+
+    public function AllRolesPermission(){
+
+        $roles = Role::all();
+        return view('backend.pages.roles.all_roles_permission',compact('roles'));
+
+    }// End Method
+
 
 
 }
