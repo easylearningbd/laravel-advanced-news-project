@@ -242,7 +242,7 @@
                         <a href="{{ route('all.permission') }}">All Permission</a>
                     </li>
                     <li>
-                        <a href="pages-timeline.html">Timeline</a>
+                        <a href="{{ route('all.roles') }}">All Roles</a>
                     </li>
                     
                 </ul>
