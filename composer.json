@@ -11,6 +11,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "spatie/laravel-permission": "^5.5",
         "stichoza/google-translate-php": "^4.1"
     },
     "require-dev": {

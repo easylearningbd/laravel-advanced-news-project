@@ -15,7 +15,7 @@ use App\Http\Controllers\Backend\PhotoGalleryController;
 use App\Http\Controllers\Backend\VideoGalleryController;
 use App\Http\Controllers\Backend\SeoSettingController;
   
-/*  
+/*   
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
