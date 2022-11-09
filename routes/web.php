@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\PhotoGalleryController;
 use App\Http\Controllers\Backend\VideoGalleryController;
 use App\Http\Controllers\Backend\SeoSettingController;
+use App\Http\Controllers\Backend\RoleController;
   
 /*   
 |--------------------------------------------------------------------------
@@ -219,6 +220,16 @@ Route::controller(SeoSettingController::class)->group(function(){
     Route::post('/update/seo/setting','UpdateSeoSetting')->name('update.seo.setting');
  
 });
+
+
+// Permission all Route
+Route::controller(RoleController::class)->group(function(){
+
+    Route::get('/all/permission','AllPermission')->name('all.permission');
+    
+ 
+});
+
 
 
  }); // End Admin Middleware 
