@@ -8,10 +8,14 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Review;
 use Carbon\Carbon;
+use App\Notifications\ReviewNotification;
+use Illuminate\Support\Facades\Notification;
 
 class ReviewController extends Controller
 {
     public function StoreReview(Request $request){
+
+        $user = User::where('role','admin')->get();
 
         $news = $request->news_id;
 
@@ -26,6 +30,8 @@ class ReviewController extends Controller
             'comment' => $request->comment,
             'created_at' => Carbon::now(), 
         ]);
+
+        Notification::send($user, new ReviewNotification($request));
 
         return back()->with("status","Review Will Approve By Admin");
 

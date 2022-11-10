@@ -10,15 +10,15 @@ use Illuminate\Notifications\Notification;
 class ReviewNotification extends Notification
 {
     use Queueable;
-
+ 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($request)
     {
-        //
+        $this->request = $request;
     }
 
     /**
@@ -29,7 +29,7 @@ class ReviewNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['database'];
     }
 
     /**
@@ -55,7 +55,7 @@ class ReviewNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            //
+            'message' => 'New Review Added In News'
         ];
     }
 }
