@@ -60,6 +60,8 @@
         </li>
             @endif
 
+
+ @if(Auth::user()->can('subcategory.menu'))
          <li>
             <a href="#sidebarEcommerce1" data-bs-toggle="collapse">
                 <i class="mdi mdi-cart-outline"></i>
@@ -68,19 +70,23 @@
             </a>
             <div class="collapse" id="sidebarEcommerce1">
                 <ul class="nav-second-level">
+                     @if(Auth::user()->can('subcategory.list'))
                     <li>
                   <a href="{{ route('all.subcategory') }}">All SubCategory</a>
                     </li>
+                     @endif
+                     @if(Auth::user()->can('subcategory.add'))
                     <li>
                  <a href="{{ route('add.subcategory') }}">Add SubCategory</a>
                     </li>
+                     @endif
                     
                 </ul>
             </div>
         </li>
+ @endif
 
-
-
+ @if(Auth::user()->can('news.menu'))
          <li>
             <a href="#newspost" data-bs-toggle="collapse">
                 <i class="mdi mdi-cart-outline"></i>
@@ -89,18 +95,24 @@
             </a>
             <div class="collapse" id="newspost">
                 <ul class="nav-second-level">
+                    @if(Auth::user()->can('news.list'))
                     <li>
                   <a href="{{ route('all.news.post') }}">All News Post</a>
                     </li>
+                    @endif
+                     @if(Auth::user()->can('news.add'))
                     <li>
                  <a href="{{ route('add.news.post') }}">Add News Post</a>
                     </li>
-                    
+                    @endif
                 </ul>
             </div>
         </li>
+@endif
+           
 
-                                  <li>
+ @if(Auth::user()->can('banner.menu'))
+            <li>
             <a href="#banner" data-bs-toggle="collapse">
                 <i class="mdi mdi-cart-outline"></i>
                 <span> Banner Setting </span>
@@ -108,6 +120,7 @@
             </a>
             <div class="collapse" id="banner">
                 <ul class="nav-second-level">
+
                     <li>
                   <a href="{{ route('all.banners') }}">All Banner</a>
                     </li>
@@ -116,7 +129,11 @@
                 </ul>
             </div>
         </li>
+@endif
 
+
+
+ @if(Auth::user()->can('photo.menu'))
             <li>
                 <a href="#sidebarEmail" data-bs-toggle="collapse">
                     <i class="mdi mdi-email-multiple-outline"></i>
@@ -132,8 +149,10 @@
                     </ul>
                 </div>
             </li>
+@endif
 
 
+ @if(Auth::user()->can('video.menu'))
              <li>
                 <a href="#video" data-bs-toggle="collapse">
                     <i class="mdi mdi-email-multiple-outline"></i>
@@ -149,8 +168,10 @@
                     </ul>
                 </div>
             </li>
+@endif
 
 
+ @if(Auth::user()->can('live.menu'))
              <li>
                 <a href="#live" data-bs-toggle="collapse">
                     <i class="mdi mdi-email-multiple-outline"></i>
@@ -166,9 +187,10 @@
                     </ul>
                 </div>
             </li>
+@endif
 
 
-
+ @if(Auth::user()->can('review.menu'))
      <li>
         <a href="#review" data-bs-toggle="collapse">
             <i class="mdi mdi-email-multiple-outline"></i>
@@ -188,8 +210,10 @@
             </ul>
         </div>
     </li>
+@endif
 
 
+@if(Auth::user()->can('seo.menu'))
       <li>
         <a href="#review" data-bs-toggle="collapse">
             <i class="mdi mdi-email-multiple-outline"></i>
@@ -207,12 +231,15 @@
             </ul>
         </div>
     </li>
-                              
+        @endif                      
                             
  
  
 
                             <li class="menu-title mt-2">Setting</li>
+
+
+@if(Auth::user()->can('setting.menu'))
 
         <li>
             <a href="#sidebarAuth" data-bs-toggle="collapse">
@@ -234,7 +261,10 @@
                 </ul>
             </div>
         </li>
+ @endif 
 
+
+ @if(Auth::user()->can('role.menu'))
         <li>
             <a href="#sidebarExpages" data-bs-toggle="collapse">
                 <i class="mdi mdi-text-box-multiple-outline"></i>
@@ -262,48 +292,10 @@
             </div>
         </li>
  
+@endif
 
-                            <li class="menu-title mt-2">Components</li>
-
-                          
-
-                            <li>
-                                <a href="#sidebarIcons" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-bullseye"></i>
-                                    <span> Icons </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarIcons">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="icons-material-symbols.html">Material Symbols Icons</a>
-                                        </li>
-                                        <li>
-                                            <a href="icons-two-tone.html">Two Tone Icons</a>
-                                        </li>
-                                         
-                                    </ul>
-                                </div>
-                            </li>
-
-                            <li>
-                                <a href="#sidebarForms" data-bs-toggle="collapse">
-                                    <i class="mdi mdi-bookmark-multiple-outline"></i>
-                                    <span> Forms </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="sidebarForms">
-                                    <ul class="nav-second-level">
-                                        <li>
-                                            <a href="forms-elements.html">General Elements</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-advanced.html">Advanced</a>
-                                        </li>
-                                        
-                                    </ul>
-                                </div>
-                            </li>
+       
+ 
 
                            
    @else
