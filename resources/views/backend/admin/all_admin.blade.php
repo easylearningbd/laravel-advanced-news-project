@@ -36,6 +36,7 @@
                     <th>Email </th>
                     <th>Phone </th>
                     <th>Status </th> 
+                    <th>Role </th> 
                     <th>Action </th> 
                 </tr>
             </thead>
@@ -49,16 +50,25 @@
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->phone }}</td>
+ 
+
                     <td>
       @if($item->status == 'active')
       <span class="badge badge-pill bg-success">Active</span>
 
                         @else
      <span class="badge badge-pill bg-danger">InActive</span>
-                        @endif
-                        
-
+                        @endif 
                     </td> 
+
+
+                     <td>
+                        @foreach($item->roles as $role)
+   <span class="badge badge-pill bg-danger">{{ $role->name }}</span>    
+                    @endforeach
+                    </td>
+
+                    
                     <td>
       <a href="{{ route('edit.admin',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>
 
