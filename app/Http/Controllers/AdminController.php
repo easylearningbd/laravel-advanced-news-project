@@ -150,9 +150,9 @@ class AdminController extends Controller
 
 
     public function EditAdmin($id){
-
+        $roles = Role::all();
         $adminuser = User::findOrFail($id);
-        return view('backend.admin.edit_admin',compact('adminuser'));
+        return view('backend.admin.edit_admin',compact('adminuser','roles'));
 
     } // End Method 
 
@@ -168,8 +168,13 @@ public function UpdateAdmin(Request $request){
         $user->email = $request->email;
         $user->phone = $request->phone; 
         $user->role = 'admin';
-        $user->status = 'inactive';
+        $user->status = 'active';
         $user->save();
+
+        $user->roles()->detach();
+         if($request->roles){
+            $user->assignRole($request->roles);
+        }
 
          $notification = array(
             'message' => 'Admin User Updated Successfully',

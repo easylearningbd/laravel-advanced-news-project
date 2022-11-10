@@ -55,6 +55,17 @@
                 <label for="inputEmail4" class="form-label">Phone </label>
                 <input type="text" name="phone" class="form-control" id="inputEmail4" value="{{ $adminuser->phone }}" >
             </div>
+
+               <div class="form-group col-md-6 mb-3">
+                <label for="inputEmail4" class="form-label">Asign Roles </label>
+               <select name="roles" class="form-select" id="example-select">
+                    <option> Select One Roles </option>
+                   @foreach($roles as $role)
+                    <option value="{{ $role->id }}" {{ $adminuser->hasRole($role->name) ? 'selected' : '' }} >{{ $role->name }} </option> 
+                    @endforeach
+                </select>
+            </div>
+
  
              
         </div>
