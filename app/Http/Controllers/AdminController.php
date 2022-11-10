@@ -188,7 +188,10 @@ public function UpdateAdmin(Request $request){
 
     public function DeleteAdmin($id){
 
-        User::findOrFail($id)->delete();
+       $user =  User::findOrFail($id);
+       if (!is_null($user)) {
+           $user->delete();
+       }
 
          $notification = array(
             'message' => 'Admin User Deleted Successfully',
