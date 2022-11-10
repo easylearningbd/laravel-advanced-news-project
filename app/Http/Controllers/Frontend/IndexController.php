@@ -17,7 +17,7 @@ use App\Models\User;
 class IndexController extends Controller
 {
     public function Index(){
-
+ 
         $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 

@@ -231,6 +231,12 @@ $banner = App\Models\Banner::find(1);
 </div>
 </div>
 
+@php
+$news = App\Models\NewsPost::where('status',1)->orderBy('id','ASC')->limit(8)->get();
+$categories = App\Models\Category::orderBy('category_name','ASC')->get();
+
+@endphp
+
 <section class="section-two">
 <div class="container">
 <div class="secTwo-color">
@@ -243,19 +249,14 @@ $banner = App\Models\Banner::find(1);
 ALL 
 </div>
 </li>
+
+@foreach($categories as $category)
 <li class="nav-item" role="presentation">
-<div class="nav-link" id="categori-tab2" data-bs-toggle="pill" data-bs-target="#Info-tabs2" role="tab" aria-controls="Info-tabs2" aria-selected="false">
-NATIONAL </div>
-</li>
-<li class="nav-item" role="presentation">
-<div class="nav-link" id="categori-tab3" data-bs-toggle="pill" data-bs-target="#Info-tabs3" role="tab" aria-controls="Info-tabs3" aria-selected="false">
-POLITICS
-</div>
-</li>
-<li class="nav-item" role="presentation">
-<div class="nav-link" id="categori-tab4" data-bs-toggle="pill" data-bs-target="#Info-tabs4" role="tab" aria-controls="Info-tabs4" aria-selected="false">
-SPORTS </div>
-</li>
+<div class="nav-link" id="categori-tab2" data-bs-toggle="pill" data-bs-target="#category{{ $category->id }}" role="tab" aria-controls="Info-tabs2" aria-selected="false">
+{{ $category->category_name }} </div>
+</li> 
+@endforeach
+
 <span class="themeBazar6"></span>
 </ul>
 </div>
@@ -263,322 +264,58 @@ SPORTS </div>
 <div class="tab-content" id="pills-tabContent">
 <div class="tab-pane fade active show" id="Info-tabs1" role="tabpanel" aria-labelledby="categori-tab1 ">
 <div class="row">
+
+@foreach($news as $item)
 <div class="themesBazar-4 themesBazar-m2">
 <div class="sec-two-wrpp">
 <div class="section-two-image">
 
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
+<a href=" "><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 </div>
 <h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }} ">{{ $item->news_title }} </a>
 </h5>
 </div>
 </div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
- </h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> <a href=" " class="mediam-icon"><i class="la la-play"></i></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> <a href=" " class="mediam-icon"><i class="la la-play"></i></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
- </div>
-</div>
-</div>
-</div>
-<div class="tab-pane fade" id="Info-tabs2" role="tabpanel" aria-labelledby="categori-tab2">
-<div class="row">
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
+@endforeach
+
+ 
+ 
+ 
+ 
 </div>
 </div>
 
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">Coaching centers to stay closed during SSC exams </a>
-</h5>
-</div>
-</div>
-</div>
-</div>
-<div class="tab-pane fade" id="Info-tabs3" role="tabpanel" aria-labelledby="categori-tab3">
+
+@foreach($categories as $category)
+<div class="tab-pane fade" id="category{{$category->id}}" role="tabpanel" aria-labelledby="categori-tab2">
 <div class="row">
+
+@php
+$catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy('id','DESC')->get();
+@endphp
+
+@foreach($catwiseNews as $item)
 <div class="themesBazar-4 themesBazar-m2">
 <div class="sec-two-wrpp">
 <div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
+<a href=" "><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 </div>
 <h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }} ">{{ $item->news_title }} </a>
 </h5>
 </div>
 </div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
+@endforeach
+ 
+ 
 </div>
 </div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
- <div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-</div>
-</div>
-<div class="tab-pane fade" id="Info-tabs4" role="tabpanel" aria-labelledby="categori-tab4">
-<div class="row">
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> <a href=" " class="mediam-icon"><i class="la la-play"></i></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> <a href=" " class="mediam-icon"><i class="la la-play"></i></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a> 
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-<div class="themesBazar-4 themesBazar-m2">
-<div class="sec-two-wrpp">
-<div class="section-two-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-</div>
-<h5 class="sec-two-title">
-<a href=" ">NU Master's admission begins on Monday </a>
-</h5>
-</div>
-</div>
-</div>
-</div>
+@endforeach
+
+
+ 
+ 
 </div>
 </div>
 </div>
