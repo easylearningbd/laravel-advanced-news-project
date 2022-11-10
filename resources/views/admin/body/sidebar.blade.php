@@ -34,7 +34,8 @@
 
                             <li class="menu-title mt-2">Menu</li>
 
-                             
+          
+          @if(Auth::user()->can('category.menu'))                   
         <li>
             <a href="#sidebarEcommerce" data-bs-toggle="collapse">
                 <i class="mdi mdi-cart-outline"></i>
@@ -43,17 +44,21 @@
             </a>
             <div class="collapse" id="sidebarEcommerce">
                 <ul class="nav-second-level">
+                     @if(Auth::user()->can('category.list'))   
                     <li>
                         <a href="{{ route('all.category') }}">All Category</a>
                     </li>
+                     @endif
+                     @if(Auth::user()->can('category.add'))   
                     <li>
                         <a href="{{ route('add.category') }}">Add Category</a>
                     </li>
+                     @endif
                     
                 </ul>
             </div>
         </li>
-
+            @endif
 
          <li>
             <a href="#sidebarEcommerce1" data-bs-toggle="collapse">

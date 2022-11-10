@@ -43,10 +43,12 @@
                     <td>{{ $key+1 }}</td>
                     <td>{{ $item->category_name }}</td>
                     <td>
+        @if(Auth::user()->can('category.edit'))                   
       <a href="{{ route('edit.category',$item->id) }}" class="btn btn-primary rounded-pill waves-effect waves-light">Edit</a>
-
+      @endif
+ @if(Auth::user()->can('category.delete'))  
       <a href="{{ route('delete.category',$item->id) }}" class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Delete</a>
-
+@endif
                     </td> 
                 </tr>
                 @endforeach
