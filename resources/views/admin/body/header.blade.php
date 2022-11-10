@@ -46,12 +46,14 @@
                         </li>
     
                      
-     
+     @php
+$reviewcount = Auth::user()->unreadNotifications()->count()
+     @endphp
             
                         <li class="dropdown notification-list topbar-dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fe-bell noti-icon"></i>
-                                <span class="badge bg-danger rounded-circle noti-icon-badge">9</span>
+                                <span class="badge bg-danger rounded-circle noti-icon-badge">{{ $reviewcount }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-lg">
     
@@ -68,39 +70,30 @@
     
     <div class="noti-scroll" data-simplebar>
 
-        <!-- item-->
-        <a href="javascript:void(0);" class="dropdown-item notify-item active">
-            <div class="notify-icon">
-                <img src="{{ asset('backend/assets/images/users/user-1.jpg') }}" class="img-fluid rounded-circle" alt="" /> </div>
-            <p class="notify-details">Ariyan</p>
-            <p class="text-muted mb-0 user-msg">
-                <small>Hi, How are you?  </small>
-            </p>
-        </a>
-     
-
-        <!-- item-->
-        <a href="javascript:void(0);" class="dropdown-item notify-item">
-            <div class="notify-icon">
-                <img src="{{ asset('backend/assets/images/users/user-4.jpg') }}" class="img-fluid rounded-circle" alt="" /> </div>
-            <p class="notify-details">Karen Robinson</p>
-            <p class="text-muted mb-0 user-msg">
-                <small>Wow ! this admin looks good and awesome design</small>
-            </p>
-        </a>
-      
+         
     
         <!-- item-->
-        <a href="javascript:void(0);" class="dropdown-item notify-item">
+  @php
+$user = Auth::user();
+@endphp
+         
+    @forelse($user->notifications as $notifiaction)
+        <!-- item-->
+        <a href="{{ route('pending.review') }}" class="dropdown-item notify-item">
             <div class="notify-icon bg-secondary">
                 <i class="mdi mdi-heart"></i>
             </div>
-            <p class="notify-details">Carlos Crouch liked
+            <p class="notify-details">{{ $notifiaction->data['message'] }}
                 <b>Admin</b>
-                <small class="text-muted">13 days ago</small>
+                <small class="text-muted"> {{ Carbon\Carbon::parse($notifiaction->created_at)->diffForHumans() }} </small>
             </p>
         </a>
+     @empty
+
+    @endforelse
+
     </div>
+  
     
                                 <!-- All-->
                                 <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
