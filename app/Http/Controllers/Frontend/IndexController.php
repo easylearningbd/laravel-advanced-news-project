@@ -21,7 +21,10 @@ class IndexController extends Controller
         $newnewspost = NewsPost::orderBy('id','DESC')->limit(8)->get();
         $newspopular = NewsPost::orderBy('view_count','DESC')->limit(8)->get();
 
-        return view('frontend.index',compact('newnewspost','newspopular'));
+        $skip_cat_0 = Category::skip(0)->first();
+        $skip_news_0 = NewsPost::where('status',1)->where('category_id',$skip_cat_0->id)->orderBy('id','DESC')->limit(5)->get();
+
+        return view('frontend.index',compact('newnewspost','newspopular','skip_cat_0','skip_news_0'));
     } // End Method 
 
 
