@@ -474,31 +474,37 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <div class="row">
 <div class="col-lg-4 col-md-4">
 
-<h2 class="themesBazar_cat01"> <a href=" "> BIZ-ECON </a> <span> <a href=" "> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
+<h2 class="themesBazar_cat01"> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}">{{ $skip_cat_1->category_name }}</a> <span> <a href="{{ url('news/category/'.$skip_cat_1->id.'/'.$skip_cat_1->category_slug) }}"> More <i class="las la-arrow-circle-right"></i> </a></span> </h2>
 
 <div class="white-bg">
+
+@foreach($skip_news_1 as $item) 
+ @if($loop->index < 1)   
 <div class="secFive-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
+<a href=" "><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <div class="secFive-title">
-<a href=" ">Recovering money from selling rights</a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">{{ $item->news_title }}</a>
 </div>
 </div>
+@endif
+@endforeach
+
+
+@foreach($skip_news_1 as $item) 
+ @if($loop->index > 0)
 <div class="secFive-smallItem">
 <div class="secFive-smallImg">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
+<a href=" "><img class="lazyload" src="{{ asset($item->image) }}"  ></a>
 <h5 class="secFive_title2">
-<a href=" ">Recovering money from selling rights</a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }}">
+    {{ $item->news_title }}</a>
 </h5>
 </div>
 </div>
-<div class="secFive-smallItem">
-<div class="secFive-smallImg">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFive_title2">
-<a href=" ">Recovering money from selling rights</a>
-</h5>
- </div>
-</div>
+ @endif
+@endforeach
+
+
 </div>
 </div>
 <div class="col-lg-4 col-md-4">
