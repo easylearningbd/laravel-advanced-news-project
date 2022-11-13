@@ -341,7 +341,7 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <div class="row">
 <div class="col-lg-8 col-md-8">
 
-<h2 class="themesBazar_cat07"> <a href=" "> <i class="las la-align-justify"></i> {{ $skip_cat_0->category_name }} </a> </h2>
+<h2 class="themesBazar_cat07"> <a href="{{ url('news/category/'.$skip_cat_0->id.'/'.$skip_cat_0->category_slug) }}"> <i class="las la-align-justify"></i> {{ $skip_cat_0->category_name }} </a> </h2>
 
 <div class="row">
 <div class="col-lg-6 col-md-6">
@@ -424,7 +424,7 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 <div class="row">
 <div class="col-lg-12 col-md-12">
 
-<h2 class="themesBazar_cat04"> <a href=" "> <i class="las la-align-justify"></i> POLITICS </a> </h2>
+<h2 class="themesBazar_cat04"> <a href="{{ url('news/category/'.$skip_cat_2->id.'/'.$skip_cat_2->category_slug) }}"> <i class="las la-align-justify"></i> {{ $skip_cat_2->category_name }} </a> </h2>
 
 <div class="secFour-slider owl-carousel owl-loaded owl-drag">
 
@@ -435,119 +435,22 @@ $catwiseNews = App\Models\NewsPost::where('category_id',$category->id)->orderBy(
 
 
 
-<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3294px, 0px, 0px); transition: all 1s ease 0s; width: 4792px;"><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-3294px, 0px, 0px); transition: all 1s ease 0s; width: 4792px;">
+
+@foreach($skip_news_2 as $item)
+  <div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
 <div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
+<a href=" "><img class="lazyload" src="{{ asset($item->image) }}" ></a>
 <h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
+<a href="{{ url('news/details/'.$item->id.'/'.$item->news_title_slug) }} ">{{ $item->news_title }}</a>
 </h5>
 </div>
-</div></div><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
- </div>
-</div></div><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
- </div>
-</div></div><div class="owl-item" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item active" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned active" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned active" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg"  ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned active" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div><div class="owl-item cloned" style="width: 289.5px; margin-right: 10px;"><div class="secFour-wrpp ">
-<div class="secFour-image">
-<a href=" "><img class="lazyload" src="assets/images/lazy.jpg" ></a>
-<h5 class="secFour-title">
-<a href=" ">How Bollywood movies recover money when</a>
-</h5>
-</div>
-</div></div></div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="las la-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="las la-angle-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button></div></div>
+</div></div>
+@endforeach
+ 
+
+
+ </div></div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="las la-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="las la-angle-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button></div></div>
 </div>
 </div>
 </div>
